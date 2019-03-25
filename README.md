@@ -4,9 +4,7 @@
 
 - [Parcel](#parcel)
 - [Elm](#elm)
-- Tailwind
-- Purgecss
-- Postcss
+- [Tailwind and CSS build tools](#tailwind-and-css-build-tools)
 - Cypress
 - Netlify
 - [See also](#see-also)
@@ -44,11 +42,22 @@ This runs `npx parcel build index.html`.
 - A [navigation `Key`](https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#Key) is needed to create navigation commands that change the URL: it is stored in the `Model`.
 - `Nav.pushUrl` changes the address bar without starting a page load.
 
+## Tailwind and CSS build tools
+
+[Tailwind CSS](https://tailwindcss.com/), an utility-first CSS framework, is included along with:
+
+- [`postcss`](https://postcss.org/) (read [`postcss.config.js`](postcss.config.js)),
+- [`autoprefixer`](https://github.com/postcss/autoprefixer) to add vendor prefixes,
+- [`purgecss`](https://github.com/FullHuman/purgecss) to remove unused selectors,
+- and [`cssnano`](https://cssnano.co/) to compress the css (by default with `parcel`).
+
+`purgecss` and `cssnano` are used on production mode (`npm run build`) to minify the css. They are ignored on development mode (`npm run start`).
+
 ## See also
 
 ### Meta tags
 
-[`index.html`](index.html) has meta tags included, like [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html) tags and Open Graph tags. Make sure to update their values and the content preview image (`img/content_preview.jpg`)
+[`index.html`](index.html) has meta tags included, like [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html) tags and Open Graph tags. Make sure to update their values and the content preview image (`img/content_preview.jpg`).
 
 # License
 
