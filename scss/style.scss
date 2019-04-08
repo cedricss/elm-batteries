@@ -8,6 +8,50 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1 {
-  @apply text-3xl font-bold;
+/*
+  Style for pages generated from markdown
+*/
+
+.markdown {
+  @apply mx-auto max-w-2xl bg-white py-10 px-12 rounded;
+
+  h1,
+  h2,
+  h3 {
+    @apply font-bold mb-2;
+  }
+
+  h1 {
+    @apply text-3xl border-b mt-8;
+  }
+
+  h2 {
+    @apply text-xl text-indigo-600 mt-8;
+  }
+
+  h3 {
+    @apply text-lg;
+  }
+
+  a {
+    @apply text-blue-600;
+  }
+
+  p,
+  ul {
+    @apply mb-4;
+  }
+
+  ul {
+    list-style: disc inside;
+  }
+
+  pre {
+    @apply bg-gray-200 my-2 p-4 rounded;
+  }
+
+  code {
+    @apply bg-gray-200 text-sm rounded;
+    padding: 0.2rem 0.4rem;
+  }
 }

@@ -23,7 +23,21 @@ const production = {
         }
       ],
       content: ["./src/**/*.elm", "index.js"],
-      whitelist: ["html", "body"]
+      whitelist: [
+        "html",
+        "body",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "pre",
+        "code",
+        "a",
+        "p",
+        "ul",
+        "markdown"
+      ],
+      whitelistPatternsChildren: [/^markdown$/]
     }),
     autoprefixer
   ]

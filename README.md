@@ -5,8 +5,8 @@
 - [Parcel](#parcel)
 - [Elm](#elm)
 - [Tailwind and CSS build tools](#tailwind-and-css-build-tools)
-- Cypress
-- Netlify
+- [elm-test and Cypress](#elm-test-and-cypress)
+- [Netlify](#netlify)
 - [See also](#see-also)
 
 # Batteries
@@ -52,6 +52,16 @@ This runs `npx parcel build index.html`.
 - and [`cssnano`](https://cssnano.co/) to compress the css (by default with `parcel`).
 
 `purgecss` and `cssnano` are used on production mode (`npm run build`) to minify the css. They are ignored on development mode (`npm run start`).
+
+## elm-test and Cypress
+
+TODO
+
+## Netlify
+
+TODO
+
+[elm-batteries.netlify.com](http://elm-batteries.netlify.com)
 
 ## See also
 

@@ -3,11 +3,13 @@ module Main exposing (main)
 import Browser
 import Browser.Navigation as Nav
 import Html exposing (Html, div, h1, text)
+import Html.Attributes exposing (class)
+import Markdown
 import Url exposing (Url)
 
 
 type alias Flags =
-    {}
+    { readme : String }
 
 
 
@@ -16,6 +18,7 @@ type alias Flags =
 
 type alias Model =
     { key : Nav.Key
+    , readme : String
     , state : State
     }
 
@@ -42,6 +45,7 @@ main =
         }
 
 
+title : String
 title =
     "Elm Batteries Included!"
 
@@ -55,9 +59,9 @@ view model =
 
 body : Model -> List (Html Msg)
 body model =
-    [ h1
-        []
-        [ text title ]
+    [ Markdown.toHtml
+        [ class "markdown" ]
+        model.readme
     ]
 
 
@@ -90,6 +94,7 @@ update msg model =
 init : Flags -> Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
     ( { key = key
+      , readme = flags.readme
       , state = Demo
       }
     , Cmd.none
