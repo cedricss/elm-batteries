@@ -37,6 +37,7 @@ body {
     @apply text-blue-600;
   }
 
+  pre,
   p,
   ul {
     @apply mb-4;
@@ -47,7 +48,7 @@ body {
   }
 
   pre {
-    @apply bg-gray-200 my-2 p-4 rounded;
+    @apply bg-gray-200 mt-2 p-4 rounded;
   }
 
   code {

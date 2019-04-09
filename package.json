@@ -8,14 +8,17 @@
     "@fullhuman/postcss-purgecss": "^1.1.0",
     "autoprefixer": "^9.5.0",
     "elm-hot": "^1.0.1",
+    "netlify-cli": "^2.10.1",
     "node-elm-compiler": "^5.0.3",
     "parcel-bundler": "^1.12.3",
     "sass": "^1.17.3",
     "tailwindcss": "^1.0.0-beta.3"
   },
   "scripts": {
-    "build": "npx parcel build index.html",
-    "start": "npx parcel index.html",
+    "build": "parcel build index.html",
+    "deploy": "npm run build && netlify deploy",
+    "deploy:prod": "netlify deploy --prod",
+    "start": "parcel index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

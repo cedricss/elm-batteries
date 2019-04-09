@@ -59,15 +59,32 @@ TODO
 
 ## Netlify
 
-TODO
+```
+npm run deploy
+```
 
-[elm-batteries.netlify.com](http://elm-batteries.netlify.com)
+This builds your project in _production_ mode and deploy to a Netlify _Live Draft URL_.
+If this draft looks good, deploy to production:
+
+```
+npm run deploy:prod
+```
+
+**Notes:**
+
+- If you are using Netlify for the first time, run `netlify login` to authenticate (learn more about [Netlify CLI](https://www.netlify.com/docs/cli/))
+- [Connect a Git repository to a Netlify site](https://www.netlify.com/docs/continuous-deployment/) to keep the two in sync
 
 ## See also
 
 ### Meta tags
 
 [`index.html`](index.html) has meta tags included, like [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html) tags and Open Graph tags. Make sure to update their values and the content preview image (`img/content_preview.jpg`).
+
+# Site and source code
+
+- [github.com/cedricss/elm-batteries](https://github.com/cedricss/elm-batteries)
+- [elm-batteries.netlify.com](http://elm-batteries.netlify.com)
 
 # License
 
