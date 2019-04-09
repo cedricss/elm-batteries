@@ -19,7 +19,9 @@
     "deploy": "npm run build && netlify deploy",
     "deploy:prod": "netlify deploy --prod",
     "start": "parcel index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress": "echo \"Error: no cypress tests specified\" && exit 1",
+    "cypress:open": "echo \"Error: no cypress tests specified\" && exit 1"
   },
   "repository": {
     "type": "git",

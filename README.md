@@ -1,5 +1,51 @@
 # Elm Batteries Included!
 
+# Getting Started
+
+## Setup
+
+Fork or clone this repository, then:
+
+```
+npm install
+```
+
+## Development
+
+```
+npm run start
+```
+
+```
+npm run test
+```
+
+```
+npm run cypress
+```
+
+```
+npm run cypress:open
+```
+
+## Production build
+
+```
+npm run build
+```
+
+## Deployment
+
+```
+npm run deploy
+```
+
+```
+npm run deploy:prod
+```
+
+# Batteries
+
 ### Table of contents
 
 - [Parcel](#parcel)
@@ -8,8 +54,6 @@
 - [elm-test and Cypress](#elm-test-and-cypress)
 - [Netlify](#netlify)
 - [See also](#see-also)
-
-# Batteries
 
 ## Parcel
 
@@ -63,12 +107,14 @@ TODO
 npm run deploy
 ```
 
-This builds your project in _production_ mode and deploy to a Netlify _Live Draft URL_.
+This builds your project in _production_ mode and deploy to a Netlify _Live Draft URL_ with `netlify deploy`.
 If this draft looks good, deploy to production:
 
 ```
 npm run deploy:prod
 ```
+
+This runs `netlify deploy --prod`, without rebuilding your project.
 
 **Notes:**
 
@@ -81,10 +127,10 @@ npm run deploy:prod
 
 [`index.html`](index.html) has meta tags included, like [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html) tags and Open Graph tags. Make sure to update their values and the content preview image (`img/content_preview.jpg`).
 
-# Site and source code
+# Site and sources
 
-- [github.com/cedricss/elm-batteries](https://github.com/cedricss/elm-batteries)
 - [elm-batteries.netlify.com](http://elm-batteries.netlify.com)
+- [github.com/cedricss/elm-batteries](https://github.com/cedricss/elm-batteries)
 
 # License
 
