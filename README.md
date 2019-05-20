@@ -1,55 +1,41 @@
 # Elm Batteries Included!
 
+### Table of contents
+
+- Getting Started
+  - [Setup](#setup)
+  - [Development](#development)
+  - [Production build](#production-build)
+  - [Deployment](#deployment)
+- Batteries
+  - [Parcel](#parcel)
+  - [Elm](#elm)
+  - [Tailwind and CSS build tools](#tailwind-and-css-build-tools)
+  - [elm-test and Cypress](#elm-test-and-cypress)
+  - [Netlify](#netlify)
+  - [See also](#see-also)
+
 # Getting Started
 
 ## Setup
 
-Fork or clone this repository, then:
-
-```
-npm install
-```
+Fork or clone this repository, then: `npm install`.
 
 ## Development
 
-```
-npm run start
-```
-
-```
-npm run test:watch
-```
-
-```
-npm run cypress:open
-```
+`npm run start`, `npm run test:watch`, `npm run cypress:open`
 
 ## Production build
 
-```
-npm run build
-```
+Build your project in _production_ mode: `npm run build`
 
 ## Deployment
 
-```
-npm run deploy
-```
+Build and deploy to a Netlify _Live Draft URL_: `npm run deploy`
 
-```
-npm run deploy:prod
-```
+If this draft looks good, deploy to production: `npm run deploy:prod`
 
 # Batteries
-
-### Table of contents
-
-- [Parcel](#parcel)
-- [Elm](#elm)
-- [Tailwind and CSS build tools](#tailwind-and-css-build-tools)
-- [elm-test and Cypress](#elm-test-and-cypress)
-- [Netlify](#netlify)
-- [See also](#see-also)
 
 ## Parcel
 
