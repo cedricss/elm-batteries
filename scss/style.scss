@@ -39,12 +39,20 @@ body {
 
   pre,
   p,
+  ol,
   ul {
     @apply mb-4;
   }
 
+  ol,
   ul {
+    @apply pl-4;
     list-style: disc inside;
+  }
+
+  ul ul,
+  ol ul {
+    list-style-type: circle;
   }
 
   pre {
