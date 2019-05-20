@@ -8,6 +8,7 @@
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "autoprefixer": "^9.5.1",
     "elm-hot": "^1.0.1",
+    "elm-test": "^0.19.0-rev6",
     "netlify-cli": "^2.11.18",
     "node-elm-compiler": "^5.0.3",
     "parcel-bundler": "^1.12.3",
@@ -19,7 +20,8 @@
     "deploy": "npm run build && netlify deploy",
     "deploy:prod": "netlify deploy --prod",
     "start": "parcel index.html",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "elm-test",
+    "test:watch": "elm-test --watch",
     "cypress": "echo \"Error: no cypress tests specified\" && exit 1",
     "cypress:open": "echo \"Error: no cypress tests specified\" && exit 1"
   },

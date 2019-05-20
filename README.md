@@ -17,11 +17,7 @@ npm run start
 ```
 
 ```
-npm run test
-```
-
-```
-npm run cypress
+npm run test:watch
 ```
 
 ```
@@ -98,6 +94,22 @@ This runs `npx parcel build index.html`.
 `purgecss` and `cssnano` are used on production mode (`npm run build`) to minify the css. They are ignored on development mode (`npm run start`).
 
 ## elm-test and Cypress
+
+### Run unit and fuzz tests
+
+```
+npm run test
+```
+
+To start the runner in [watch mode](https://github.com/rtfeldman/node-test-runner#--watch):
+
+```
+npm run test:watch
+```
+
+Edit tests in `tests/*.elm`.
+
+### Run Cypress
 
 TODO
 
