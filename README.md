@@ -9,11 +9,12 @@
   - [Deployment](#deployment)
 - Batteries
   - [Parcel](#parcel)
-  - [Elm](#elm)
   - [Tailwind and CSS build tools](#tailwind-and-css-build-tools)
   - [elm-test and Cypress](#elm-test-and-cypress)
   - [Netlify](#netlify)
   - [See also](#see-also)
+- Elm
+  - [Navigation](#navigation)
 
 # Getting Started
 
@@ -59,14 +60,6 @@ This runs `npx parcel build index.html`.
 
 - Compiled with the Elm `optimize` flag.
 - Minified with [`terser`](https://github.com/terser-js/terser) and the [recommended flags](https://elm-lang.org/0.19.0/optimize) for Elm apps, which have no side-effects.
-
-## Elm
-
-### Navigation
-
-- All links in an application create a [`UrlRequest`](https://package.elm-lang.org/packages/elm/browser/latest/Browser#UrlRequest) (read [Browser.application](https://package.elm-lang.org/packages/elm/browser/latest/Browser#application)).
-- A [navigation `Key`](https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#Key) is needed to create navigation commands that change the URL: it is stored in the `Model`.
-- `Nav.pushUrl` changes the address bar without starting a page load.
 
 ## Tailwind and CSS build tools
 
@@ -124,6 +117,14 @@ This runs `netlify deploy --prod`, without rebuilding your project.
 ### Meta tags
 
 [`index.html`](index.html) has meta tags included, like [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html) tags and Open Graph tags. Make sure to update their values and the content preview image (`img/content_preview.jpg`).
+
+# Elm
+
+## Navigation
+
+- All links in an application create a [`UrlRequest`](https://package.elm-lang.org/packages/elm/browser/latest/Browser#UrlRequest) (read [Browser.application](https://package.elm-lang.org/packages/elm/browser/latest/Browser#application)).
+- A [navigation `Key`](https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#Key) is needed to create navigation commands that change the URL: it is stored in the `Model`.
+- `Nav.pushUrl` changes the address bar without starting a page load.
 
 # Site and sources
 
