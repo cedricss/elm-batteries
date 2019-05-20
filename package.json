@@ -5,14 +5,14 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^1.1.0",
-    "autoprefixer": "^9.5.0",
+    "@fullhuman/postcss-purgecss": "^1.2.0",
+    "autoprefixer": "^9.5.1",
     "elm-hot": "^1.0.1",
-    "netlify-cli": "^2.10.1",
+    "netlify-cli": "^2.11.18",
     "node-elm-compiler": "^5.0.3",
     "parcel-bundler": "^1.12.3",
-    "sass": "^1.17.3",
-    "tailwindcss": "^1.0.0-beta.3"
+    "sass": "^1.20.1",
+    "tailwindcss": "^1.0.1"
   },
   "scripts": {
     "build": "parcel build index.html",
