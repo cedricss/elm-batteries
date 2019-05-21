@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply p-4 font-sans text-gray-800 bg-gray-100;
+  @apply p-2 font-sans text-gray-800;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -13,24 +13,36 @@ body {
 */
 
 .markdown {
-  @apply mx-auto max-w-2xl bg-white py-10 px-12 rounded;
-
-  h1,
-  h2,
-  h3 {
-    @apply font-bold mb-2;
-  }
+  @apply mx-auto max-w-3xl bg-white py-10 px-12 rounded;
+  @apply text-gray-700;
+  @apply leading-relaxed;
 
   h1 {
-    @apply text-3xl border-b mt-8;
+    @apply font-bold text-4xl text-gray-900;
   }
 
   h2 {
-    @apply text-xl text-indigo-600 mt-8;
+    @apply mt-12;
+    @apply font-bold text-3xl text-gray-900;
+  }
+
+  h1 + h2 {
+    @apply mt-3;
   }
 
   h3 {
-    @apply text-lg;
+    @apply mt-6;
+    @apply border-t-4 border-gray-300 pt-1;
+    @apply font-bold text-2xl text-gray-800;
+  }
+
+  h2 + h3 {
+    @apply mt-2;
+  }
+
+  h4 {
+    @apply mt-2;
+    @apply font-semibold text-xl text-gray-800;
   }
 
   a {
@@ -41,7 +53,8 @@ body {
   p,
   ol,
   ul {
-    @apply mb-4;
+    @apply my-1;
+    @apply text-base;
   }
 
   ol,
@@ -56,11 +69,11 @@ body {
   }
 
   pre {
-    @apply bg-gray-200 mt-2 p-4 rounded;
+    @apply bg-gray-100 mb-4 p-3 rounded;
   }
 
   code {
-    @apply bg-gray-200 text-sm rounded;
+    @apply bg-gray-100 text-gray-700 text-xs rounded;
     padding: 0.2rem 0.4rem;
   }
 }

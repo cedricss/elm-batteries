@@ -1,6 +1,6 @@
 # Elm Batteries Included!
 
-### Table of contents
+## Table of contents
 
 - Getting Started
   - [Setup](#setup)
@@ -10,37 +10,37 @@
 - Batteries
   - [Parcel](#parcel)
   - [Tailwind and CSS build tools](#tailwind-and-css-build-tools)
-  - [elm-test and Cypress](#elm-test-and-cypress)
+  - [Cypress and elm-test](#cypress-and-elm-test)
   - [Netlify](#netlify)
   - [See also](#see-also)
 - Elm
   - [Navigation](#navigation)
 
-# Getting Started
+## Getting Started
 
-## Setup
+#### Setup
 
 Fork or clone this repository, then: `npm install`.
 
-## Development
+#### Development
 
 `npm run start`, `npm run test:watch`, `npm run cypress:open`
 
-## Production build
+#### Production build
 
 Build your project in _production_ mode: `npm run build`
 
-## Deployment
+#### Deployment
 
 Build and deploy to a Netlify _Live Draft URL_: `npm run deploy`
 
 If this draft looks good, deploy to production: `npm run deploy:prod`
 
-# Batteries
+## Batteries
 
-## Parcel
+### Parcel
 
-### Start
+#### Start
 
 ```
 npm run start
@@ -48,7 +48,7 @@ npm run start
 
 This runs `npx parcel index.html` (read [`package.json`](package.json)). Hot code swapping in Elm works with [`elm-hot`](https://github.com/klazuka/elm-hot).
 
-### Build
+#### Build
 
 ```
 npm run build
@@ -61,7 +61,7 @@ This runs `npx parcel build index.html`.
 - Compiled with the Elm `optimize` flag.
 - Minified with [`terser`](https://github.com/terser-js/terser) and the [recommended flags](https://elm-lang.org/0.19.0/optimize) for Elm apps, which have no side-effects.
 
-## Tailwind and CSS build tools
+### Tailwind and CSS build tools
 
 [Tailwind CSS](https://tailwindcss.com/), an utility-first CSS framework, is included along with:
 
@@ -72,29 +72,13 @@ This runs `npx parcel build index.html`.
 
 `purgecss` and `cssnano` are used on production mode (`npm run build`) to minify the css. They are ignored on development mode (`npm run start`).
 
-## elm-test and Cypress
+### Cypress and elm-test
 
-### Run unit and fuzz tests
+#### Run Cypress
 
-These tests are in `tests/*`.
+These tests are in `cypress/integration/*`.
 
-To start the runner in [watch mode](https://github.com/rtfeldman/node-test-runner#--watch):
-
-```
-npm run test:watch
-```
-
-Alternatively, run
-
-```
-npm run test
-```
-
-### Run Cypress
-
-These tests are in `cypress/integration/*`
-
-To launch Cypress Test Runner app:
+To launch Cypress runner app:
 
 ```
 npm run cypress:open
@@ -111,13 +95,29 @@ npm run cypress
 - the Elm app uses `data-*` attributes to provide context to the selectors and insulate them from CSS or JS changes. [Learn more »](https://docs.cypress.io/guides/references/best-practices.html#Selecting-Elements)
 - to learn more about Cypress and play with it, [install and start it](https://docs.cypress.io/guides/getting-started/installing-cypress.html#Installing) in a fresh new project folder: it will initialize a `cypress` folder with several examples.
 
-## Netlify
+#### Run unit and fuzz tests
+
+These tests are in `tests/*`.
+
+To start the runner in [watch mode](https://github.com/rtfeldman/node-test-runner#--watch):
+
+```
+npm run test:watch
+```
+
+Alternatively, run it just once:
+
+```
+npm run test
+```
+
+### Netlify
 
 ```
 npm run deploy
 ```
 
-This builds your project in _production_ mode and deploy to a Netlify _Live Draft URL_ with `netlify deploy`.
+This builds your project in _production_ mode and deploys to a Netlify _Live Draft URL_ with `netlify deploy`.
 If this draft looks good, deploy to production:
 
 ```
@@ -131,25 +131,25 @@ This runs `netlify deploy --prod`, without rebuilding your project.
 - If you are using Netlify for the first time, run `netlify login` to authenticate (learn more about [Netlify CLI](https://www.netlify.com/docs/cli/))
 - [Connect a Git repository to a Netlify site](https://www.netlify.com/docs/continuous-deployment/) to keep the two in sync
 
-## See also
+### See also
 
-### Meta tags
+#### Meta tags
 
 [`index.html`](index.html) has meta tags included, like [Twitter Card](https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html) tags and Open Graph tags. Make sure to update their values and the content preview image (`img/content_preview.jpg`).
 
-# Elm
+## Elm
 
-## Navigation
+### Navigation
 
 - All links in an application create a [`UrlRequest`](https://package.elm-lang.org/packages/elm/browser/latest/Browser#UrlRequest) (read [Browser.application](https://package.elm-lang.org/packages/elm/browser/latest/Browser#application)).
 - A [navigation `Key`](https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#Key) is needed to create navigation commands that change the URL: it is stored in the `Model`.
 - `Nav.pushUrl` changes the address bar without starting a page load.
 
-# Site and sources
+## Site and sources
 
 - [elm-batteries.netlify.com](http://elm-batteries.netlify.com)
 - [github.com/cedricss/elm-batteries](https://github.com/cedricss/elm-batteries)
 
-# License
+## License
 
 MIT
