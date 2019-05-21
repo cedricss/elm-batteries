@@ -76,9 +76,7 @@ This runs `npx parcel build index.html`.
 
 ### Run unit and fuzz tests
 
-```
-npm run test
-```
+These tests are in `tests/*`.
 
 To start the runner in [watch mode](https://github.com/rtfeldman/node-test-runner#--watch):
 
@@ -86,11 +84,32 @@ To start the runner in [watch mode](https://github.com/rtfeldman/node-test-runne
 npm run test:watch
 ```
 
-Edit tests in `tests/*.elm`.
+Alternatively, run
+
+```
+npm run test
+```
 
 ### Run Cypress
 
-TODO
+These tests are in `cypress/integration/*`
+
+To launch Cypress Test Runner app:
+
+```
+npm run cypress:open
+```
+
+Alternatively, to run Cypress tests from the CLI without the GUI:
+
+```
+npm run cypress
+```
+
+**Notes**:
+
+- the Elm app uses `data-*` attributes to provide context to the selectors and insulate them from CSS or JS changes. [Learn more »](https://docs.cypress.io/guides/references/best-practices.html#Selecting-Elements)
+- to learn more about Cypress and play with it, [install and start it](https://docs.cypress.io/guides/getting-started/installing-cypress.html#Installing) in a fresh new project folder: it will initialize a `cypress` folder with several examples.
 
 ## Netlify
 

@@ -3,7 +3,7 @@ module Main exposing (main)
 import Browser
 import Browser.Navigation as Nav
 import Html exposing (Html, div, h1, text)
-import Html.Attributes exposing (class)
+import Html.Attributes exposing (attribute, class)
 import Markdown
 import Url exposing (Url)
 
@@ -60,7 +60,9 @@ view model =
 body : Model -> List (Html Msg)
 body model =
     [ Markdown.toHtml
-        [ class "markdown" ]
+        [ attribute "data-test" "markdown-content"
+        , class "markdown"
+        ]
         model.readme
     ]
 

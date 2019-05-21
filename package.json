@@ -7,6 +7,7 @@
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "autoprefixer": "^9.5.1",
+    "cypress": "^3.3.0",
     "elm-hot": "^1.0.1",
     "elm-test": "^0.19.0-rev6",
     "netlify-cli": "^2.11.18",
@@ -22,8 +23,8 @@
     "start": "parcel index.html",
     "test": "elm-test",
     "test:watch": "elm-test --watch",
-    "cypress": "echo \"Error: no cypress tests specified\" && exit 1",
-    "cypress:open": "echo \"Error: no cypress tests specified\" && exit 1"
+    "cypress": "cypress run",
+    "cypress:open": "cypress open"
   },
   "repository": {
     "type": "git",
