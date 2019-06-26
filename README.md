@@ -37,7 +37,13 @@ Sneak peek of the documentation website, coming soon 🤞
 
 Click the Github green button [Use this template](https://github.com/cedricss/elm-batteries/generate) to generate a new public or private project from [elm-batteries](https://github.com/cedricss/elm-batteries).
 
-In the following documentation, instead of `npm run <command-name>`, you can run `yarn <command-name>` or define short aliases in your terminal.
+Install the dependencies:
+
+```
+npm install
+```
+
+In the following documentation, if you use [yarn](https://yarnpkg.com), run `yarn <command-name>` (instead of `npm run <command-name>`). Alternatively, you can define short aliases in your terminal to run these commands.
 
 ## Elm + Parcel
 
