@@ -1,6 +1,6 @@
 {
   "name": "elm-batteries",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "description": "Elm + parcel + tailwind + cypress + netlify and more!",
   "main": "index.js",
   "dependencies": {},
@@ -17,10 +17,12 @@
     "tailwindcss": "^1.0.1"
   },
   "scripts": {
-    "build": "parcel build index.html",
+    "dev": "netlify dev",
+    "dev:live": "netlify dev --live",
     "deploy": "npm run build && netlify deploy",
     "deploy:prod": "netlify deploy --prod",
     "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "elm-test",
     "test:watch": "elm-test --watch",
     "cypress": "cypress run",
