@@ -2,6 +2,11 @@
 
 A project template to develop Elm apps with Parcel, Netlify, Tailwind CSS and Cypress.
 
+<p align="center">
+<img src="https://raw.githubusercontent.com/cedricss/elm-batteries/master/img/content_preview.jpg")/>
+Sneak peek of the documentation website, coming soon 🤞
+</p>
+
 ## Table of contents
 
 - Setup
