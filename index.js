@@ -8,8 +8,6 @@ if (module.hot) {
   });
 }
 
-var flags = {
-  readme: readFileSync("README.md", "utf-8")
-};
+var flags = {};
 
 var app = Elm.Main.init({ flags });
