@@ -139,6 +139,14 @@ npm run dev:live
 
 ### Run Cypress
 
+If you are running Netlify Dev and testing your app with serverless functions, edit `cypress.json` with the `8888` port:
+
+```json
+{
+  "baseUrl": "http://localhost:8888"
+}
+```
+
 These tests are in `cypress/integration/*`. To launch Cypress runner app:
 
 ```bash
