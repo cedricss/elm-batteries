@@ -8,72 +8,68 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/*
-  Style for pages generated from markdown
-*/
+h1 {
+  @apply font-bold text-4xl text-gray-900;
+}
 
-.markdown {
-  @apply mx-auto max-w-3xl bg-white py-10 px-12 rounded;
+h2 {
+  @apply mt-12;
+  @apply font-bold text-3xl text-gray-900;
+}
+
+h1 + h2 {
+  @apply mt-3;
+}
+
+h3 {
+  @apply mt-6;
+  @apply border-t-4 border-gray-300 pt-1;
+  @apply font-bold text-2xl text-gray-800;
+}
+
+h2 + h3 {
+  @apply mt-2;
+}
+
+h4 {
+  @apply mt-2;
+  @apply font-semibold text-xl text-gray-800;
+}
+
+a {
+  @apply text-blue-600;
+}
+
+pre,
+p,
+ol,
+ul {
+  @apply my-1;
+  @apply text-base;
+}
+
+ol,
+ul {
+  @apply pl-4;
+  list-style: disc inside;
+}
+
+ul ul,
+ol ul {
+  list-style-type: circle;
+}
+
+pre {
+  @apply bg-gray-100 mb-4 p-3 rounded;
+}
+
+code {
+  @apply bg-gray-100 text-gray-700 text-xs rounded;
+  padding: 0.2rem 0.4rem;
+}
+
+.content {
+  @apply mx-auto max-w-4xl bg-white py-10 px-12 rounded;
   @apply text-gray-700;
   @apply leading-relaxed;
-
-  h1 {
-    @apply font-bold text-4xl text-gray-900;
-  }
-
-  h2 {
-    @apply mt-12;
-    @apply font-bold text-3xl text-gray-900;
-  }
-
-  h1 + h2 {
-    @apply mt-3;
-  }
-
-  h3 {
-    @apply mt-6;
-    @apply border-t-4 border-gray-300 pt-1;
-    @apply font-bold text-2xl text-gray-800;
-  }
-
-  h2 + h3 {
-    @apply mt-2;
-  }
-
-  h4 {
-    @apply mt-2;
-    @apply font-semibold text-xl text-gray-800;
-  }
-
-  a {
-    @apply text-blue-600;
-  }
-
-  pre,
-  p,
-  ol,
-  ul {
-    @apply my-1;
-    @apply text-base;
-  }
-
-  ol,
-  ul {
-    @apply pl-4;
-    list-style: disc inside;
-  }
-
-  ul ul,
-  ol ul {
-    list-style-type: circle;
-  }
-
-  pre {
-    @apply bg-gray-100 mb-4 p-3 rounded;
-  }
-
-  code {
-    @apply bg-gray-100 text-gray-700 text-xs rounded;
-    padding: 0.2rem 0.4rem;
-  }
 }

@@ -47,9 +47,9 @@ In the following documentation, instead of `npm run <command-name>`, you can run
 npm run start
 ```
 
-> ✓ development build and web server with [Parcel](https://parceljs.org/)
-> ✓ live reload
-> ✓ hot code swapping with [elm-hot](https://github.com/klazuka/elm-hot)
+> ✓ development build and web server with [Parcel](https://parceljs.org/)<br/>
+> ✓ live reload<br/>
+> ✓ hot code swapping with [elm-hot](https://github.com/klazuka/elm-hot)<br/>
 
 - Web page: http://localhost:1234
 
@@ -59,9 +59,9 @@ npm run start
 npm run build
 ```
 
-> ✓ production build with [Parcel](https://parceljs.org/)
-> ✓ compilation with the Elm `optimize` flag
-> ✓ minification with [`terser`](https://github.com/terser-js/terser)
+> ✓ production build with [Parcel](https://parceljs.org/)<br/>
+> ✓ compilation with the Elm `optimize` flag<br/>
+> ✓ minification with [`terser`](https://github.com/terser-js/terser)<br/>
 
 The JS code from Elm is minified with [special flags](https://elm-lang.org/0.19.0/optimize) that work for Elm apps because they have no side-effects (otherwise it would be unreliable to use such flags).
 
@@ -75,9 +75,9 @@ To run serverless functions along your Elm app, run:
 npm run dev
 ```
 
-> ✓ development build with [Parcel](https://parceljs.org/)
-> ✓ web server with Parcel behind [Netlify Dev](https://www.netlify.com/docs/cli/#netlify-dev-beta)
-> ✓ serverless functions on your local machine
+> ✓ development build with [Parcel](https://parceljs.org/)<br/>
+> ✓ web server with Parcel behind [Netlify Dev](https://www.netlify.com/docs/cli/#netlify-dev-beta)<br/>
+> ✓ serverless functions on your local machine<br/>
 
 - Web page: http://localhost:8888
 - Serverless function example:
@@ -90,10 +90,10 @@ npm run dev
 npm run deploy
 ```
 
-> ✓ production build with [Parcel](https://parceljs.org/)
-> ✓ compilation with the Elm `optimize` flag
-> ✓ minification with [`terser`](https://github.com/terser-js/terser)
-> ✓ deployment to a [Netlify](https://www.netlify.com/docs/welcome/) _Live Draft URL_
+> ✓ production build with [Parcel](https://parceljs.org/)<br/>
+> ✓ compilation with the Elm `optimize` flag<br/>
+> ✓ minification with [`terser`](https://github.com/terser-js/terser)<br/>
+> ✓ deployment to a [Netlify](https://www.netlify.com/docs/welcome/) _Live Draft URL_<br/>
 
 If you are using Netlify for the first time, run `netlify login` to authenticate (learn more about [Netlify CLI](https://www.netlify.com/docs/cli/)). [Connect a Git repository](https://www.netlify.com/docs/continuous-deployment/) to a Netlify site to keep the two in sync.
 
@@ -105,7 +105,7 @@ If this preview looks good, deploy to production.
 npm run deploy:prod
 ```
 
-> ✓ deployment to production with [Netlify](https://www.netlify.com/docs/welcome/)
+> ✓ deployment to production with [Netlify](https://www.netlify.com/docs/welcome/)<br/>
 
 ### `bonus` Run a live session
 
@@ -115,8 +115,8 @@ To share your development session with a coworker, run:
 npm run dev:live
 ```
 
-> ✓ development build with [Parcel](https://parceljs.org/)
-> ✓ live session with [Netlify Dev](https://www.netlify.com/docs/welcome/)
+> ✓ development build with [Parcel](https://parceljs.org/)<br/>
+> ✓ live session with [Netlify Dev](https://www.netlify.com/docs/welcome/)<br/>
 
 ## Tailwind and CSS build tools
 

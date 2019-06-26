@@ -2,14 +2,14 @@ module Main exposing (main)
 
 import Browser
 import Browser.Navigation as Nav
-import Html exposing (Html, div, h1, text)
-import Html.Attributes exposing (attribute, class)
+import Html exposing (..)
+import Html.Attributes exposing (..)
 import Markdown
 import Url exposing (Url)
 
 
 type alias Flags =
-    { readme : String }
+    {}
 
 
 
@@ -18,7 +18,6 @@ type alias Flags =
 
 type alias Model =
     { key : Nav.Key
-    , readme : String
     , state : State
     }
 
@@ -59,11 +58,32 @@ view model =
 
 body : Model -> List (Html Msg)
 body model =
-    [ Markdown.toHtml
-        [ attribute "data-test" "markdown-content"
-        , class "markdown"
+    [ div
+        [ attribute "data-test" "content"
+        , class "content text-center"
         ]
-        model.readme
+        [ h1
+            []
+            [ text "Elm Batteries Included" ]
+        , img
+            [ src "content_preview.jpg"
+            , alt "Commands cheat sheet"
+            ]
+            []
+        , p
+            []
+            [ text "Sneak peek of the documentation website, coming soon \u{1F91E}" ]
+        , p
+            [ class "font-semibold" ]
+            [ a
+                [ href "https://twitter.com/CedricSoulas" ]
+                [ text "@CedricSoulas" ]
+            , text " | "
+            , a
+                [ href "https://github.com/cedricss/elm-batteries" ]
+                [ text "github.com/cedricss/elm-batteries" ]
+            ]
+        ]
     ]
 
 
@@ -96,7 +116,6 @@ update msg model =
 init : Flags -> Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
     ( { key = key
-      , readme = flags.readme
       , state = Demo
       }
     , Cmd.none
