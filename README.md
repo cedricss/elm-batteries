@@ -151,7 +151,9 @@ To learn more about Cypress and play with it, [install and start it](https://doc
 
 ### Run unit and fuzz tests
 
-These tests are in `tests/*`. To start the runner in [watch mode](https://github.com/rtfeldman/node-test-runner#--watch):
+Install [elm-test](https://github.com/rtfeldman/node-test-runner).
+
+These tests are in `tests/*`. To start the runner in [watch mode](https://github.com/rtfeldman/node-test-runner:
 
 ```bash
 npm run test:watch
