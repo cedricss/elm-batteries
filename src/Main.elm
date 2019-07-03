@@ -2,8 +2,11 @@ module Main exposing (main)
 
 import Browser
 import Browser.Navigation as Nav
-import Html exposing (..)
-import Html.Attributes exposing (..)
+import Css exposing (..)
+import Html
+import Html.Styled exposing (..)
+import Html.Styled.Attributes exposing (alt, attribute, class, css, href, src)
+import Html.Styled.Events exposing (onClick)
 import Markdown
 import Url exposing (Url)
 
@@ -49,16 +52,20 @@ title =
     "Elm Batteries Included!"
 
 
+
+-- VIEW
+
+
 view : Model -> Browser.Document Msg
 view model =
     { title = title
-    , body = body model
+    , body = [ body model |> toUnstyled ]
     }
 
 
-body : Model -> List (Html Msg)
+body : Model -> Html Msg
 body model =
-    [ div
+    div
         [ attribute "data-test" "content"
         , class "content text-center"
         ]
@@ -84,7 +91,10 @@ body model =
                 [ text "github.com/cedricss/elm-batteries" ]
             ]
         ]
-    ]
+
+
+
+-- UPDATE
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
