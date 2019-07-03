@@ -3,8 +3,10 @@
 A project template to develop Elm apps with Parcel, Netlify, Tailwind CSS and Cypress.
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/cedricss/elm-batteries/master/img/content_preview.jpg")/>
-Sneak peek of the documentation website, coming soon 🤞
+  <a href="https://concat.dev/elm/batteries">
+    <img alt="website documentation" src="https://raw.githubusercontent.com/cedricss/elm-batteries/master/img/content_preview.jpg"/>
+  </a>
+  Sneak peek of the documentation website, coming soon 🤞
 </p>
 
 ## Table of contents
@@ -147,11 +149,15 @@ If you are running Netlify Dev and testing your app with serverless functions, e
 }
 ```
 
-These tests are in `cypress/integration/*`. To launch Cypress runner app:
+These tests are in `cypress/integration/*`. [Start your Elm app](#-1-start-your-elm-application) then launch the Cypress runner app:
 
 ```bash
 npm run cypress:open
 ```
+
+If you open one test from the list of spec files then you should see your application loaded:
+
+![Cypress runner app](https://concat.dev/elm-cypress.png)
 
 Alternatively, to run Cypress tests from the CLI without the GUI:
 
@@ -167,7 +173,7 @@ To learn more about Cypress and play with it, [install and start it](https://doc
 
 Install [elm-test](https://github.com/rtfeldman/node-test-runner).
 
-These tests are in `tests/*`. To start the runner in [watch mode](https://github.com/rtfeldman/node-test-runner:
+These tests are in `tests/*`. To start the runner in [watch mode](https://github.com/rtfeldman/node-test-runner#--watch):
 
 ```bash
 npm run test:watch
@@ -195,8 +201,11 @@ npm run test
 
 ## Site and sources
 
-- Interactive documentation: [concat.dev/elm](https://concat.dev/elm) (coming soon)
+- Documentation: [concat.dev/elm/batteries](https://concat.dev/elm/batteries) (coming soon)
 - Project template: [github.com/cedricss/elm-batteries](https://github.com/cedricss/elm-batteries)
+- Built with elm-batteries:
+  - [reactive.how/rxjs](https://reactive.how/rxjs)
+  - [concat.dev](https://concat.dev)
 
 ## License
 
