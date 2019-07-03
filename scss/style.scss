@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply p-2 font-sans text-gray-800;
+  @apply font-sans text-gray-800;
   text-rendering: optimizelegibility;
   -webkit-font-smoothing: antialiased;
 }
@@ -38,14 +38,6 @@ h4 {
 
 a {
   @apply text-blue-600;
-}
-
-pre,
-p,
-ol,
-ul {
-  @apply my-1;
-  @apply text-base;
 }
 
 ol,

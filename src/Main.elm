@@ -47,13 +47,18 @@ main =
         }
 
 
+
+-- VIEW
+
+
 title : String
 title =
     "Elm Batteries Included!"
 
 
-
--- VIEW
+theme : { headerHeight : Rem }
+theme =
+    { headerHeight = rem 4 }
 
 
 view : Model -> Browser.Document Msg
@@ -66,8 +71,62 @@ view model =
 body : Model -> Html Msg
 body model =
     div
+        []
+        [ viewHeader
+        , div
+            [ class "container mx-auto flex-wrap-reverse flex" ]
+            [ viewSidebar model
+            , viewContent model
+            ]
+        ]
+
+
+viewHeader : Html msg
+viewHeader =
+    div
+        [ class "fixed top-0 inset-x-0 bg-white border-b border-gray-300"
+        , css [ height theme.headerHeight ]
+        ]
+        [ div
+            [ class "container mx-auto h-full"
+            , class "flex items-center px-6"
+            ]
+            [ p
+                [ class "font-semibold uppercase text-sm text-gray-600" ]
+                [ text "header" ]
+            ]
+        ]
+
+
+viewSidebar : Model -> Html Msg
+viewSidebar model =
+    div
+        [ class "w-full lg:w-1/4 xl:w-1/5" ]
+        [ nav
+            [ class "overflow-y-auto lg:py-4 sticky"
+            , css
+                [ height <| calc (vh 100) minus theme.headerHeight
+                , top theme.headerHeight
+                ]
+            ]
+            [ p
+                [ class "font-semibold uppercase text-sm text-gray-600"
+                , class "px-6 py-4 h-full"
+                , class "lg:rounded bg-indigo-100"
+                ]
+                [ text "sidebar" ]
+            ]
+        ]
+
+
+viewContent : Model -> Html Msg
+viewContent model =
+    div
         [ attribute "data-test" "content"
         , class "content text-center"
+        , class "w-full lg:w-3/4 xl:w-4/5"
+        , class "min-h-screen w-full"
+        , css [ marginTop theme.headerHeight ]
         ]
         [ h1
             []
