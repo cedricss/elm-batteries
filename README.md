@@ -1,6 +1,15 @@
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4954c048-352a-4b1c-bea5-05d4a7c1c4fc/deploy-status)](https://elm-batteries.netlify.com)
+
 # Elm Batteries Included
 
 A project template to develop Elm apps with Parcel, Netlify, Tailwind CSS and Cypress.
+
+- Local web server and serverless functions
+- Hot code and style reloading, keeping app state
+- Front-end testing
+- Optimized and minified production build
+- Live, preview and production deployments
 
 <p align="center">
   <a href="https://concat.dev/elm/batteries">
@@ -45,7 +54,7 @@ Install the dependencies:
 npm install
 ```
 
-In the following documentation, if you use [yarn](https://yarnpkg.com), run `yarn <command-name>` (instead of `npm run <command-name>`). Alternatively, you can define short aliases in your terminal to run these commands.
+💡 In the following documentation, if you use [yarn](https://yarnpkg.com), run `yarn <command-name>` (instead of `npm run <command-name>`). Alternatively, you can define short aliases in your terminal to run these commands.
 
 ## Elm + Parcel
 
@@ -71,7 +80,7 @@ npm run build
 > ✓ compilation with the Elm `optimize` flag<br/>
 > ✓ minification with [`terser`](https://github.com/terser-js/terser)<br/>
 
-The JS code from Elm is minified with [special flags](https://elm-lang.org/0.19.0/optimize) that work for Elm apps because they have no side-effects (otherwise it would be unreliable to use such flags).
+💡 The JS code from Elm is minified with [special flags](https://elm-lang.org/0.19.0/optimize) that work for Elm apps because they have no side-effects (otherwise it would be unreliable to use such flags).
 
 ## Elm + Parcel + Netlify
 
@@ -103,7 +112,7 @@ npm run deploy
 > ✓ minification with [`terser`](https://github.com/terser-js/terser)<br/>
 > ✓ deployment to a [Netlify](https://www.netlify.com/docs/welcome/) _Live Draft URL_<br/>
 
-If you are using Netlify for the first time, run `netlify login` to authenticate (learn more about [Netlify CLI](https://www.netlify.com/docs/cli/)). [Connect a Git repository](https://www.netlify.com/docs/continuous-deployment/) to a Netlify site to keep the two in sync.
+💡 If you are using Netlify for the first time, run `netlify login` to authenticate (learn more about [Netlify CLI](https://www.netlify.com/docs/cli/)).
 
 If this preview looks good, deploy to production.
 
@@ -114,6 +123,8 @@ npm run deploy:prod
 ```
 
 > ✓ deployment to production with [Netlify](https://www.netlify.com/docs/welcome/)<br/>
+
+💡 `deploy` commands are great when rapidly iterating. To avoid deploying without committing and pushing first, consider setting up continuous deployment with [Netlify Git workflow](https://www.netlify.com/docs/continuous-deployment/).
 
 ### `bonus` Run a live session
 
