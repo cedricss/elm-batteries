@@ -8,7 +8,9 @@ import Html.Styled exposing (..)
 import Html.Styled.Attributes exposing (alt, attribute, class, css, href, src)
 import Html.Styled.Events exposing (onClick)
 import Markdown
+import Route exposing (Route(..))
 import Url exposing (Url)
+import View exposing (navIn, navOut)
 
 
 type alias Flags =
@@ -21,26 +23,21 @@ type alias Flags =
 
 type alias Model =
     { key : Nav.Key
-    , state : State
+    , route : Route.Route
     }
 
 
-type State
-    = Demo
-
-
 type Msg
-    = NoOp
-    | ChangedUrl Url
-    | ClickedLink Browser.UrlRequest
+    = BrowserChangedUrl Url
+    | UserClickedLink Browser.UrlRequest
 
 
 main : Program Flags Model Msg
 main =
     Browser.application
         { init = init
-        , onUrlRequest = ClickedLink
-        , onUrlChange = ChangedUrl
+        , onUrlRequest = UserClickedLink
+        , onUrlChange = BrowserChangedUrl
         , view = view
         , update = update
         , subscriptions = subscriptions
@@ -56,100 +53,64 @@ title =
     "Elm Batteries Included!"
 
 
-theme : { headerHeight : Rem }
-theme =
-    { headerHeight = rem 4 }
-
-
 view : Model -> Browser.Document Msg
 view model =
     { title = title
-    , body = [ body model |> toUnstyled ]
+    , body = [ body model |> div [] |> toUnstyled ]
     }
 
 
-body : Model -> Html Msg
+body : Model -> List (Html Msg)
 body model =
+    [ View.header
+        [ navIn "Home" "/"
+        , navIn "API demo" "/demo"
+        , navOut "Twitter" "https://twitter.com/CedricSoulas"
+        , navOut "Github" "https://github.com/cedricss/elm-batteries"
+        ]
+    , View.container <|
+        case model.route of
+            Demo ->
+                viewDemo model
+
+            Home ->
+                viewHome model
+
+            NotFound ->
+                View.notFound
+    ]
+
+
+viewContent : List (Html Msg) -> Html Msg
+viewContent content =
     div
+        [ class "content text-center" ]
+        content
+
+
+viewHome : Model -> List (Html Msg)
+viewHome model =
+    [ h1
+        [ class "text-center" ]
+        [ text "Elm Batteries Included" ]
+    , p
+        [ class "text-center" ]
+        [ text "Sneak peek of the documentation website, coming soon \u{1F91E}" ]
+    , img
+        [ class "max-w-4xl mx-auto"
+        , src "content_preview.jpg"
+        , alt "Commands cheat sheet"
+        ]
         []
-        [ viewHeader
-        , div
-            [ class "container mx-auto flex-wrap-reverse flex" ]
-            [ viewSidebar model
-            , viewContent model
-            ]
-        ]
+    ]
 
 
-viewHeader : Html msg
-viewHeader =
-    div
-        [ class "fixed top-0 inset-x-0 bg-white border-b border-gray-300"
-        , css [ height theme.headerHeight ]
-        ]
-        [ div
-            [ class "container mx-auto h-full"
-            , class "flex items-center px-6"
-            ]
-            [ p
-                [ class "font-semibold uppercase text-sm text-gray-600" ]
-                [ text "header" ]
-            ]
-        ]
-
-
-viewSidebar : Model -> Html Msg
-viewSidebar model =
-    div
-        [ class "w-full lg:w-1/4 xl:w-1/5" ]
-        [ nav
-            [ class "overflow-y-auto lg:py-4 sticky"
-            , css
-                [ height <| calc (vh 100) minus theme.headerHeight
-                , top theme.headerHeight
-                ]
-            ]
-            [ p
-                [ class "font-semibold uppercase text-sm text-gray-600"
-                , class "px-6 py-4 h-full"
-                , class "lg:rounded bg-indigo-100"
-                ]
-                [ text "sidebar" ]
-            ]
-        ]
-
-
-viewContent : Model -> Html Msg
-viewContent model =
-    div
-        [ attribute "data-test" "content"
-        , class "content text-center"
-        , class "w-full lg:w-3/4 xl:w-4/5"
-        , class "min-h-screen w-full"
-        , css [ marginTop theme.headerHeight ]
-        ]
-        [ h1
-            []
-            [ text "Elm Batteries Included" ]
-        , img
-            [ src "content_preview.jpg"
-            , alt "Commands cheat sheet"
-            ]
-            []
-        , p
-            []
-            [ text "Sneak peek of the documentation website, coming soon \u{1F91E}" ]
-        , p
-            [ class "font-semibold" ]
-            [ a
-                [ href "https://twitter.com/CedricSoulas" ]
-                [ text "@CedricSoulas" ]
-            , text " | "
-            , a
-                [ href "https://github.com/cedricss/elm-batteries" ]
-                [ text "github.com/cedricss/elm-batteries" ]
-            ]
-        ]
+viewDemo : Model -> List (Html Msg)
+viewDemo model =
+    [ h1
+        []
+        [ text "API demo" ]
+    ]
 
 
 
@@ -163,10 +124,12 @@ update msg model =
             ( model, Cmd.none )
     in
     case msg of
-        ChangedUrl _ ->
-            noChange
+        BrowserChangedUrl url ->
+            ( { model | route = Route.fromUrl url }
+            , Cmd.none
+            )
 
-        ClickedLink urlRequest ->
+        UserClickedLink urlRequest ->
             case urlRequest of
                 Browser.Internal url ->
                     ( model
@@ -178,14 +141,11 @@ update msg model =
                     , Nav.load url
                     )
 
-        NoOp ->
-            noChange
-
 
 init : Flags -> Url -> Nav.Key -> ( Model, Cmd Msg )
 init flags url key =
     ( { key = key
-      , state = Demo
+      , route = Route.fromUrl url
       }
     , Cmd.none
     )

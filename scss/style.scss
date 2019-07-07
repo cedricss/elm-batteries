@@ -9,7 +9,8 @@ body {
 }
 
 h1 {
-  @apply font-bold text-4xl text-gray-900;
+  @apply font-bold text-4xl text-gray-800;
+  @apply mb-4;
 }
 
 h2 {
@@ -37,18 +38,14 @@ h4 {
 }
 
 a {
-  @apply text-blue-600;
+  @apply text-blue-600 font-semibold;
+  &:hover {
+    @apply text-blue-800;
+  }
 }
 
-ol,
-ul {
-  @apply pl-4;
-  list-style: disc inside;
-}
-
-ul ul,
-ol ul {
-  list-style-type: circle;
+.btn {
+  @apply bg-blue-100 rounded px-4 py-2;
 }
 
 pre {
@@ -61,7 +58,16 @@ code {
 }
 
 .content {
-  @apply mx-auto max-w-4xl bg-white py-10 px-12 rounded;
   @apply text-gray-700;
   @apply leading-relaxed;
+  ol,
+  ul {
+    @apply pl-4;
+    list-style: disc inside;
+  }
+
+  ul ul,
+  ol ul {
+    list-style-type: circle;
+  }
 }
