@@ -23,7 +23,7 @@
     "deploy:prod": "netlify deploy --prod",
     "start": "npm run build-img && parcel index.html",
     "build-img": "parcel build img/*",
-    "build": "npm run build-img && parcel build index.html",
+    "build": "npm run build-img && parcel build index.html --no-cache",
     "test": "elm-test",
     "test:watch": "elm-test --watch",
     "cypress": "cypress run",
