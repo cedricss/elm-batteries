@@ -13,7 +13,7 @@ A project template to develop Elm apps with Parcel, Netlify, Tailwind CSS and Cy
 
 <p align="center">
   <a href="https://concat.dev/elm/batteries">
-    <img alt="website documentation" src="https://raw.githubusercontent.com/cedricss/elm-batteries/master/img/content_preview.jpg"/>
+    <img alt="website documentation" src="https://concat.dev/sneak_peek.png"/>
   </a>
   Sneak peek of the documentation website, coming soon 🤞
 </p>
@@ -22,14 +22,11 @@ A project template to develop Elm apps with Parcel, Netlify, Tailwind CSS and Cy
 
 - Setup
   - [Generate a new project from this template](#generate-a-new-project)
-- Elm + Parcel
-  - [Start](#1-start-your-elm-application)
-  - [Build](#2-build-for-production)
 - Elm + Parcel + Netlify
-  - [Develop](#1-develop-with-serverless-functions)
-  - [Deploy a preview](#2-build-for-production-and-deploy-a-preview)
-  - [Deploy to production](#3-deploy-to-production)
-  - [Run a live session](#bonus-run-a-live-session)
+  - [Develop](#develop-with-serverless-functions)
+  - [Run a live session](#run-a-live-session)
+  - [Deploy a preview](#build-for-production-and-deploy-a-preview)
+  - [Deploy to production](#deploy-to-production)
 - Testing
   - [Run Cypress](#run-cypress)
   - [Run unit and fuzz tests](#run-unit-and-fuzz-tests)
@@ -58,33 +55,11 @@ npm install
 
 ## Elm + Parcel
 
-### `1` Start your Elm application
-
-```bash
-npm run start
-```
-
-> ✓ development build and web server with [Parcel](https://parceljs.org/)<br/>
-> ✓ live reload<br/>
-> ✓ hot code swapping with [elm-hot](https://github.com/klazuka/elm-hot)<br/>
-
-- Web page: http://localhost:1234
-
-### `2` Build for production
-
-```bash
-npm run build
-```
-
-> ✓ production build with [Parcel](https://parceljs.org/)<br/>
-> ✓ compilation with the Elm `optimize` flag<br/>
-> ✓ minification with [`terser`](https://github.com/terser-js/terser)<br/>
-
-💡 The JS code from Elm is minified with [special flags](https://elm-lang.org/0.19.0/optimize) that work for Elm apps because they have no side-effects (otherwise it would be unreliable to use such flags).
+Read [Elm + Parcel](PARCEL.md) to use this project template without Netlify Dev and serverless functions.
 
 ## Elm + Parcel + Netlify
 
-### `1` Develop with serverless functions
+### Develop with serverless functions
 
 To run serverless functions along your Elm app, run:
 
@@ -95,13 +70,25 @@ npm run dev
 > ✓ development build with [Parcel](https://parceljs.org/)<br/>
 > ✓ web server with Parcel behind [Netlify Dev](https://www.netlify.com/docs/cli/#netlify-dev-beta)<br/>
 > ✓ serverless functions on your local machine<br/>
+> ✓ hot code swapping with [elm-hot](https://github.com/klazuka/elm-hot)<br/>
 
 - Web page: http://localhost:8888
 - Serverless function example:
   - http://localhost:8888/.netlify/functions/version
   - source: `functions/version/version.js`
 
-### `2` Build for production and deploy a preview
+### Run a live session
+
+To share your development session with a coworker, run:
+
+```bash
+npm run dev:live
+```
+
+> ✓ development build with [Parcel](https://parceljs.org/)<br/>
+> ✓ live session with [Netlify Dev](https://www.netlify.com/docs/welcome/)<br/>
+
+### Build for production and deploy a preview
 
 ```bash
 npm run deploy
@@ -114,9 +101,11 @@ npm run deploy
 
 💡 If you are using Netlify for the first time, run `netlify login` to authenticate (learn more about [Netlify CLI](https://www.netlify.com/docs/cli/)).
 
+💡 The JS code from Elm is minified with [special flags](https://elm-lang.org/0.19.0/optimize) that work for Elm apps because they have no side-effects (otherwise it would be unreliable to use such flags).
+
 If this preview looks good, deploy to production.
 
-### `3` Deploy to production
+### Deploy to production
 
 ```bash
 npm run deploy:prod
@@ -125,17 +114,6 @@ npm run deploy:prod
 > ✓ deployment to production with [Netlify](https://www.netlify.com/docs/welcome/)<br/>
 
 💡 `deploy` commands are great when rapidly iterating. To avoid deploying without committing and pushing first, consider setting up continuous deployment with [Netlify Git workflow](https://www.netlify.com/docs/continuous-deployment/).
-
-### `bonus` Run a live session
-
-To share your development session with a coworker, run:
-
-```bash
-npm run dev:live
-```
-
-> ✓ development build with [Parcel](https://parceljs.org/)<br/>
-> ✓ live session with [Netlify Dev](https://www.netlify.com/docs/welcome/)<br/>
 
 ## Tailwind and CSS build tools
 
@@ -171,14 +149,6 @@ npm run cypress
 The Elm app uses `data-*` attributes to provide context to the selectors and insulate them from CSS or JS changes. [Learn more »](https://docs.cypress.io/guides/references/best-practices.html#Selecting-Elements)
 
 To learn more about Cypress and play with it, [install and start it](https://docs.cypress.io/guides/getting-started/installing-cypress.html#Installing) in a fresh new project folder: it will initialize a `cypress` folder with several examples.
-
-**Note:** when you are not using Netlify Dev and serverless functions, start your app [directly with Parcel](#1-start-your-elm-application) and edit `cypress.json` to use the `1234` Parcel dev server port:
-
-```json
-{
-  "baseUrl": "http://localhost:1234"
-}
-```
 
 ### Run unit and fuzz tests
 
