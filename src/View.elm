@@ -1,6 +1,7 @@
 module View exposing
     ( container
     , header
+    , keyValue
     , navIn
     , navOut
     , notFound
@@ -99,4 +100,21 @@ notFound =
             [ class "btn", href "/" ]
             [ text "Home" ]
         ]
+    ]
+
+
+
+-- MISC
+
+
+keyValue : String -> String -> List (Html msg)
+keyValue key value =
+    [ span
+        [ class "inline-block mr-6 w-12"
+        , class "text-gray-600 text-right text-xs uppercase"
+        ]
+        [ text key ]
+    , span
+        [ attribute "data-value" key ]
+        [ text value ]
     ]

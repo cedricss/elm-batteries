@@ -9,7 +9,7 @@ import Url.Parser.Query as Query
 
 
 type Route
-    = Demo
+    = ApiDemo
     | Home
     | NotFound
 
@@ -18,14 +18,13 @@ parser : Parser (Route -> a) a
 parser =
     oneOf
         [ map Home top
-        , map Demo (s "demo")
+        , map Home (s "index.html")
+        , map ApiDemo (s "api" </> s "demo")
 
-        {-
-           Add more routes like this:
-           , map Comment (s "user" </> string </> s "comment" </> int)
-           , map BlogQuery (s "blog" <?> Query.string "q")
-           Learn more: https://guide.elm-lang.org/webapps/url_parsing.html
-        -}
+        --  Add more routes like this:
+        --  , map Comment (s "user" </> string </> s "comment" </> int)
+        --  , map BlogQuery (s "blog" <?> Query.string "q")
+        --  Learn more: https://guide.elm-lang.org/webapps/url_parsing.html
         ]
 
 
