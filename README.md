@@ -23,13 +23,13 @@ A project template to develop Elm apps with Parcel, Netlify, Tailwind CSS and Cy
 - Setup
   - [Generate a new project from this template](#generate-a-new-project)
 - Elm + Parcel
-  - [Start](#-1-start-your-elm-application)
-  - [Build](#-2-build-for-production)
+  - [Start](#1-start-your-elm-application)
+  - [Build](#2-build-for-production)
 - Elm + Parcel + Netlify
-  - [Develop](#-1-develop-with-serverless-functions)
-  - [Deploy a preview](#-2-build-for-production-and-deploy-a-preview)
-  - [Deploy to production](#-3-deploy-to-production)
-  - [Run a live session](#-bonus-run-a-live-session)
+  - [Develop](#1-develop-with-serverless-functions)
+  - [Deploy a preview](#2-build-for-production-and-deploy-a-preview)
+  - [Deploy to production](#3-deploy-to-production)
+  - [Run a live session](#bonus-run-a-live-session)
 - Testing
   - [Run Cypress](#run-cypress)
   - [Run unit and fuzz tests](#run-unit-and-fuzz-tests)
@@ -152,15 +152,7 @@ npm run dev:live
 
 ### Run Cypress
 
-If you are running Netlify Dev and testing your app with serverless functions, edit `cypress.json` with the `8888` port:
-
-```json
-{
-  "baseUrl": "http://localhost:8888"
-}
-```
-
-These tests are in `cypress/integration/*`. [Start your Elm app](#-1-start-your-elm-application) then launch the Cypress runner app:
+These tests are in `cypress/integration/*`. [Start your Elm app](#1-develop-with-serverless-functions) then launch the Cypress runner app:
 
 ```bash
 npm run cypress:open
@@ -179,6 +171,14 @@ npm run cypress
 The Elm app uses `data-*` attributes to provide context to the selectors and insulate them from CSS or JS changes. [Learn more »](https://docs.cypress.io/guides/references/best-practices.html#Selecting-Elements)
 
 To learn more about Cypress and play with it, [install and start it](https://docs.cypress.io/guides/getting-started/installing-cypress.html#Installing) in a fresh new project folder: it will initialize a `cypress` folder with several examples.
+
+**Note:** when you are not using Netlify Dev and serverless functions, start your app [directly with Parcel](#1-start-your-elm-application) and edit `cypress.json` to use the `1234` Parcel dev server port:
+
+```json
+{
+  "baseUrl": "http://localhost:1234"
+}
+```
 
 ### Run unit and fuzz tests
 
