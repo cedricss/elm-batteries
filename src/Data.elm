@@ -23,6 +23,8 @@ type alias Package =
 
 packageDecoder : Decoder Package
 packageDecoder =
+    -- Build JSON decoders using the pipeline (|>) operator.
+    -- Learn more: https://package.elm-lang.org/packages/NoRedInk/elm-json-decode-pipeline/1.0.0/
     Decode.succeed Package
         |> required "name" string
         |> required "url" string

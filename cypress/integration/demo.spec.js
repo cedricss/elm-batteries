@@ -17,19 +17,19 @@ context("Demo", () => {
       cy.get("[data-test=content]").contains("Elm Batteries Included");
     });
 
-    context("Open the API demo page from the menu bar", () => {
+    context("Open the demo page from the menu", () => {
       beforeEach(() => {
         cy.get("[data-test=menu]")
-          .contains("API demo")
+          .contains("Demo")
           .click();
       });
 
       it("change the URL", () => {
-        cy.url().should("eq", Cypress.config().baseUrl + "/api/demo");
+        cy.url().should("eq", Cypress.config().baseUrl + "/demo");
       });
 
-      it("update the page with a new content", () => {
-        cy.get("[data-test=content]").contains("API demo");
+      it("update the page with new content", () => {
+        cy.get("[data-test=content]").contains("Demo");
       });
 
       it("go back to the homepage", () => {
@@ -51,9 +51,9 @@ context("Demo", () => {
     });
   });
 
-  context("Visit the API demo page", () => {
+  context("Visit the demo page", () => {
     beforeEach(() => {
-      cy.visit("/api/demo");
+      cy.visit("/demo");
       cy.get("[data-test=package]").should(
         "have.attr",
         "data-result",
@@ -62,10 +62,10 @@ context("Demo", () => {
     });
 
     it("display the content related to this URL", () => {
-      cy.get("[data-test=content]").contains("API demo");
+      cy.get("[data-test=content]").contains("Demo");
     });
 
-    it("show data from the API response", () => {
+    it("decode and show the response", () => {
       cy.server();
 
       // We stub the call with another author
@@ -82,7 +82,7 @@ context("Demo", () => {
       cy.get("[data-value=author]").contains("John");
     });
 
-    it("show an error if the API response is invalid", () => {
+    it("show an error if the response is invalid", () => {
       cy.server();
 
       // We stub the call with an invalid empty response
@@ -95,11 +95,11 @@ context("Demo", () => {
     });
 
     /**
-      The request in the following test is not stubbed: it guarantees that the
+      The request in the following test is not stubbe d: it guarantees that the
       contract between your Elm app and Netlify is working correctly.
       https://docs.cypress.io/guides/guides/network-requests.html#Testing-Strategies
     */
-    it("reach the Netlify function and retrieve data", () => {
+    it("reach Netlify and retrieve data", () => {
       cy.server();
       cy.route("/.netlify/functions/demo").as("demo");
 

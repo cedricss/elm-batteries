@@ -19,7 +19,7 @@ parser =
     oneOf
         [ map Home top
         , map Home (s "index.html")
-        , map ApiDemo (s "api" </> s "demo")
+        , map ApiDemo (s "demo")
 
         --  Add more routes like this:
         --  , map Comment (s "user" </> string </> s "comment" </> int)

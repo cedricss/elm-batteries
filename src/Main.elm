@@ -55,14 +55,21 @@ main =
 -- VIEW
 
 
-title : String
-title =
-    "Elm Batteries Included!"
+project : { description : String, title : String, url : String }
+project =
+    { title = "Elm Batteries Included!"
+    , description = """
+        Develop Elm apps with Parcel, Netlify, Tailwind CSS and Cypress.
+        Learn how these delightful web technologies work together.
+        Get started with Elm navigation, routes, remote data and JSON decoder
+      """
+    , url = "https://github.com/cedricss/elm-batteries#elm-batteries-included"
+    }
 
 
 view : Model -> Browser.Document Msg
 view model =
-    { title = title
+    { title = project.title
     , body = [ body model |> div [] |> toUnstyled ]
     }
 
@@ -71,7 +78,8 @@ body : Model -> List (Html Msg)
 body model =
     [ View.header
         [ navIn "Home" "/"
-        , navIn "API demo" "/api/demo"
+        , navIn "Demo" "/demo"
+        , navOut "Documentation" "https://concat.dev/elm"
         , navOut "Twitter" "https://twitter.com/CedricSoulas"
         , navOut "Github" "https://github.com/cedricss/elm-batteries"
         ]
@@ -97,18 +105,15 @@ viewContent content =
 
 viewHome : Model -> List (Html Msg)
 viewHome model =
-    [ h1
-        [ class "text-center" ]
-        [ text "Elm Batteries Included" ]
+    [ h1 [] [ text "Elm Batteries Included" ]
     , p
-        [ class "text-center" ]
-        [ text "Sneak peek of the documentation website, coming soon \u{1F91E}" ]
-    , img
-        [ class "max-w-4xl mx-auto"
-        , src "/content_preview.jpg"
-        , alt "Commands cheat sheet"
+        [ class "max-w-2xl text-xl mb-4" ]
+        [ text project.description ]
+    , ul
+        [ class "text-xl" ]
+        [ li [] [ a [ href "/demo" ] [ text "Try the demo ›" ] ]
+        , li [] [ a [ href project.url ] [ text "Read the documentation ›" ] ]
         ]
-        []
     ]
 
 
@@ -135,7 +140,15 @@ viewDemo model =
                 ]
                 [ text "Fetch package.json" ]
     in
-    [ h1 [] [ text "API demo" ]
+    [ h1 [] [ text "Demo" ]
+    , h2 [] [ text "Serverless Lambda function on Netlify" ]
+    , p
+        [ class "max-w-xl text-xl mb-8" ]
+        [ text "The demo function has a faux 500ms delay to simulate a slower connection and illustrate the loading state. "
+        , a
+            [ href "https://github.com/cedricss/elm-batteries/blob/master/functions/demo/demo.js#L5" ]
+            [ text "Learn more ›" ]
+        ]
     , div [] <|
         case model.package of
             RemoteData.Success p ->
