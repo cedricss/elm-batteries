@@ -1,7 +1,7 @@
 // Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
 exports.handler = async (event, context) => {
   try {
-    // Fake a long running request
+    // A faux 500ms delay to simulate a slower connection
     await new Promise(resolve => setTimeout(resolve, 500));
 
     return {

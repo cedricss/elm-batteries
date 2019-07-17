@@ -3,36 +3,62 @@
 
 # Elm Batteries Included
 
-A project template to develop Elm apps with Parcel, Netlify, Tailwind CSS and Cypress.
+A project template and a generator to:
 
+- Develop Elm apps with Parcel, Netlify, Tailwind CSS and Cypress
+- Learn how these delightful web technologies work together 😋
+- Get started with Elm css, navigation, routes, remote data and JSON decoder
+
+---
+
+<p align="center">
+  <i>The generated <a href="https://elm-lang.org">Elm</a> app started with <a href="https://parceljs.org">Parcel</a><br/> behind <a href="https://www.netlify.com/products/dev/">Netlify Dev</a> and tested with <a href="https://www.cypress.io">Cypress</a>:</i>
+</p>
+
+<p align="center" margin-bottom="-2rem">
+  <a href="https://elm-batteries.netlify.com/demo">
+    <img width="875px" src="https://concat.dev/elm-cypress.png" alt="elm-batteries template demo" />
+  </a>
+</p>
+
+## Links
+
+- Demo: [elm-batteries.netlify.com/demo](https://elm-batteries.netlify.com/demo)
+- Documentation: [concat.dev/elm](https://concat.dev/elm)
+- News and support:
+  - [Twitter](https://twitter.com/CedricSoulas)
+  - [Mailing list](https://concat.dev/elm#subscribe)
+  - [Slack](https://elmlang.herokuapp.com/) (ping @CedricSoulas)
+
+## Features
+
+- Elm app with css, navigation, routes, remote data and JSON decoder
 - Local web server and serverless functions
 - Hot code and style reloading, keeping app state
 - Front-end testing
 - Optimized and minified production build
 - Live, preview and production deployments
 
-<p align="center">
-  <a href="https://concat.dev/elm/batteries">
-    <img alt="website documentation" src="https://concat.dev/sneak_peek.png"/>
-  </a>
-  Sneak peek of the documentation website, coming soon 🤞
-</p>
+![Website documentation (sneak peek)](https://concat.dev/sneak_peek.png)
 
 ## Table of contents
 
 - Setup
   - [Generate a new project from this template](#generate-a-new-project)
-- Elm + Parcel + Netlify
-  - [Develop](#develop-with-serverless-functions)
+- Local development
+  - [Develop](#develop) (Elm + Parcel)
+  - [Develop with serverless functions](#develop-with-serverless-functions) (Elm + Parcel + Netlify Dev)
   - [Run a live session](#run-a-live-session)
-  - [Deploy a preview](#build-for-production-and-deploy-a-preview)
-  - [Deploy to production](#deploy-to-production)
 - Testing
   - [Run Cypress](#run-cypress)
   - [Run unit and fuzz tests](#run-unit-and-fuzz-tests)
-- Styling
-  - [Tailwind](#tailwind-and-css-build-tools)
-  - [CSS build tools](#tailwind-and-css-build-tools)
+- Production build and deployment
+  - [Build for production and deploy a preview](#build-for-production-and-deploy-a-preview)
+  - [Deploy to production](#deploy-to-production)
+  - [Going further](#going-further)
+- Designing
+  - [Tailwind](#designing)
+  - [CSS build tools](#designing)
 - See also
   - [Html meta tags](#meta-tags)
   - [Elm Navigation](#navigation)
@@ -53,13 +79,13 @@ npm install
 
 💡 In the following documentation, if you use [yarn](https://yarnpkg.com), run `yarn <command-name>` (instead of `npm run <command-name>`). Alternatively, you can define short aliases in your terminal to run these commands.
 
-## Elm + Parcel
+## Local development
+
+### Develop (Elm + Parcel)
 
 Read [Elm + Parcel](PARCEL.md) to use this project template without Netlify Dev and serverless functions.
 
-## Elm + Parcel + Netlify
-
-### Develop with serverless functions
+### Develop with serverless functions (Elm + Parcel + Netlify Dev)
 
 To run serverless functions along your Elm app, run:
 
@@ -87,44 +113,6 @@ npm run dev:live
 
 > ✓ development build with [Parcel](https://parceljs.org/)<br/>
 > ✓ live session with [Netlify Dev](https://www.netlify.com/docs/welcome/)<br/>
-
-### Build for production and deploy a preview
-
-```bash
-npm run deploy
-```
-
-> ✓ production build with [Parcel](https://parceljs.org/)<br/>
-> ✓ compilation with the Elm `optimize` flag<br/>
-> ✓ minification with [`terser`](https://github.com/terser-js/terser)<br/>
-> ✓ deployment to a [Netlify](https://www.netlify.com/docs/welcome/) _Live Draft URL_<br/>
-
-💡 If you are using Netlify for the first time, run `netlify login` to authenticate (learn more about [Netlify CLI](https://www.netlify.com/docs/cli/)).
-
-💡 The JS code from Elm is minified with [special flags](https://elm-lang.org/0.19.0/optimize) that work for Elm apps because they have no side-effects (otherwise it would be unreliable to use such flags).
-
-If this preview looks good, deploy to production.
-
-### Deploy to production
-
-```bash
-npm run deploy:prod
-```
-
-> ✓ deployment to production with [Netlify](https://www.netlify.com/docs/welcome/)<br/>
-
-💡 `deploy` commands are great when rapidly iterating. To avoid deploying without committing and pushing first, consider setting up continuous deployment with [Netlify Git workflow](https://www.netlify.com/docs/continuous-deployment/).
-
-## Tailwind and CSS build tools
-
-[Tailwind CSS](https://tailwindcss.com/), an utility-first CSS framework, is included along with:
-
-- [`postcss`](https://postcss.org/) (read [`postcss.config.js`](postcss.config.js)),
-- [`autoprefixer`](https://github.com/postcss/autoprefixer) to add vendor prefixes,
-- [`purgecss`](https://github.com/FullHuman/purgecss) to remove unused selectors,
-- and [`cssnano`](https://cssnano.co/) to compress the css (by default with Parcel).
-
-`purgecss` and `cssnano` are used on production mode to minify the css. They are ignored on development mode.
 
 ## Testing
 
@@ -166,6 +154,48 @@ Alternatively, run it just once:
 npm run test
 ```
 
+## Production build and deployment
+
+### Build for production and deploy a preview
+
+```bash
+npm run deploy
+```
+
+> ✓ production build with [Parcel](https://parceljs.org/)<br/>
+> ✓ compilation with the Elm `optimize` flag<br/>
+> ✓ minification with [`terser`](https://github.com/terser-js/terser)<br/>
+> ✓ deployment to a [Netlify](https://www.netlify.com/docs/welcome/) _Live Draft URL_<br/>
+
+💡 If you are using Netlify for the first time, run `netlify login` to authenticate (learn more about [Netlify CLI](https://www.netlify.com/docs/cli/)).
+
+💡 The JS code from Elm is minified with [special flags](https://elm-lang.org/0.19.0/optimize) that work for Elm apps because they have no side-effects (otherwise it would be unreliable to use such flags).
+
+If this preview looks good, deploy to production.
+
+### Deploy to production
+
+```bash
+npm run deploy:prod
+```
+
+> ✓ deployment to production with [Netlify](https://www.netlify.com/docs/welcome/)<br/>
+
+### Going further
+
+`deploy` commands are great when rapidly iterating. Consider also setting up [continuous deployment with Netlify »](https://www.netlify.com/docs/continuous-deployment/).
+
+## Designing
+
+[Tailwind CSS](https://tailwindcss.com/), an utility-first CSS framework, is included along with:
+
+- [`postcss`](https://postcss.org/) (read [`postcss.config.js`](postcss.config.js)),
+- [`autoprefixer`](https://github.com/postcss/autoprefixer) to add vendor prefixes,
+- [`purgecss`](https://github.com/FullHuman/purgecss) to remove unused selectors,
+- and [`cssnano`](https://cssnano.co/) to compress the css (by default with Parcel).
+
+`purgecss` and `cssnano` are used on production mode to minify the css. They are ignored on development mode.
+
 ## See also
 
 ### Meta tags
@@ -182,12 +212,16 @@ npm run test
 
 ## Site and sources
 
-- Documentation: [concat.dev/elm/batteries](https://concat.dev/elm/batteries) (coming soon)
+- Documentation: [concat.dev/elm/batteries](https://concat.dev/elm)
 - Project template: [github.com/cedricss/elm-batteries](https://github.com/cedricss/elm-batteries)
+- News and support:
+  - [Twitter](https://twitter.com/CedricSoulas)
+  - [Mailing list](https://concat.dev/elm#subscribe)
+  - [Slack](https://elmlang.herokuapp.com/) (ping @CedricSoulas)
 - Built with elm-batteries:
   - [reactive.how/rxjs](https://reactive.how/rxjs)
   - [concat.dev](https://concat.dev)
 
 ## License
 
-MIT
+Authored by [Cédric Soulas](https://twitter.com/CedricSoulas), released under the [MIT](LICENSE) License.
