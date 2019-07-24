@@ -15,7 +15,7 @@ A project template and a generator to:
   <i>The generated <a href="https://elm-lang.org">Elm</a> app started with <a href="https://parceljs.org">Parcel</a><br/> behind <a href="https://www.netlify.com/products/dev/">Netlify Dev</a> and tested with <a href="https://www.cypress.io">Cypress</a>:</i>
 </p>
 
-<p align="center" margin-bottom="-2rem">
+<p align="center">
   <a href="https://elm-batteries.netlify.com/demo">
     <img width="875px" src="https://concat.dev/elm-cypress.png" alt="elm-batteries template demo" />
   </a>
@@ -68,6 +68,18 @@ A project template and a generator to:
 ## Setup
 
 ### Generate a new project
+
+#### From the CLI
+
+```
+npm init elm-batteries my-elm-project
+```
+
+<p align="center">
+    <img width="816px" src="https://concat.dev/create-elm-batteries.png" alt="create-elm-batteries cli generator" />
+</p>
+
+#### From Github
 
 Click the Github green button [Use this template](https://github.com/cedricss/elm-batteries/generate) to generate a new public or private project from [elm-batteries](https://github.com/cedricss/elm-batteries).
 

@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "description": "Elm + parcel + tailwind + cypress + netlify and more!",
   "main": "index.js",
+  "private": true,
   "dependencies": {},
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^1.2.0",
@@ -41,7 +42,11 @@
     "cypress",
     "netlify"
   ],
-  "author": "Cédric Soulas",
+  "author": {
+    "name": "Cédric Soulas",
+    "email": "soulascedric@gmail.com",
+    "url": "https://concat.dev/elm"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cedricss/elm-batteries/issues"
