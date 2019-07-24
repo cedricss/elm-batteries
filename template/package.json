@@ -1,23 +1,40 @@
 {
-  "name": "elm-batteries",
-  "version": "0.0.3",
-  "description": "Elm + parcel + tailwind + cypress + netlify and more!",
+  "name": "<%= name %>",
+  "version": "1.0.0",
+  "description": "<%= description %>",
+  "author": "<%= author %>",
+  "contributors": [
+    {
+      "name": "Cédric Soulas",
+      "email": "soulascedric@gmail.com",
+      "url": "https://github.com/cedricss/elm-batteries"
+    }
+  ],
+  "private": true,
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^1.2.0",
     "autoprefixer": "^9.6.1",
+    <%_ if (cypress) { _%>
     "cypress": "^3.4.0",
+    <%_ } _%>
     "elm": "^0.19.0-no-deps",
     "elm-hot": "^1.0.1",
+    <%_ if (netlify) { _%>
     "netlify-cli": "^2.11.23",
+    <%_ } _%>
     "node-elm-compiler": "^5.0.3",
     "parcel-bundler": "^1.12.3",
     "sass": "^1.22.4",
     "tailwindcss": "^1.0.5"
   },
   "scripts": {
+    <%_ if (netlify) { _%>
     "dev": "netlify dev",
+    <%_ } else { _%>
+    "dev": "npm run start",
+    <%_ } _%>
     "dev:live": "netlify dev --live",
     "deploy": "npm run build && netlify deploy",
     "deploy:prod": "netlify deploy --prod",
@@ -40,11 +57,5 @@
     "purgecss",
     "cypress",
     "netlify"
-  ],
-  "author": "Cédric Soulas",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cedricss/elm-batteries/issues"
-  },
-  "homepage": "https://github.com/cedricss/elm-batteries#readme"
+  ]
 }

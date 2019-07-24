@@ -1,0 +1,44 @@
+{
+  "name": "create-elm-batteries",
+  "version": "1.0.0",
+  "description": "Create an Elm app, batteries included.",
+  "bin": "cli.js",
+  "files": [
+    "cli.js",
+    "saofile.js",
+    "template/"
+  ],
+  "repository": {
+    "url": "git+https://github.com/cedricss/create-elm-dev.git",
+    "type": "git"
+  },
+  "scripts": {
+    "release": "standard-version"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "sao": "^1.6.1"
+  },
+  "bugs": {
+    "url": "https://github.com/cedricss/elm-batteries/issues"
+  },
+  "homepage": "https://concat.dev/elm",
+  "author": {
+    "name": "Cédric Soulas",
+    "email": "soulascedric@gmail.com",
+    "url": "https://concat.dev/elm"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cedricss/elm-batteries.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "elm",
+    "parcel",
+    "tailwind",
+    "purgecss",
+    "cypress",
+    "netlify"
+  ]
+}
