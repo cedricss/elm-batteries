@@ -5,41 +5,53 @@
 
 A project template and a generator to:
 
-- Develop Elm apps with Parcel, Netlify, Tailwind CSS and Cypress
-- Learn how these delightful web technologies work together 😋
+- Learn how [Elm](https://elm-lang.org/), [Parcel](https://parceljs.org), [Cypress](https://www.cypress.io) and [Netlify](https://www.netlify.com) work together 😋
 - Get started with Elm css, navigation, routes, remote data and JSON decoder
 
----
+## Features
+
+- Local web server and serverless functions
+- Hot code and style reloading, keeping app state
+- CSS transformations with postcss (autoprefixer, purgecss...)
+- Front-end testing
+- Optimized and minified production build
+- Preview and production deployments
+
+[**Learn more ›**](https://github.com/cedricss/elm-batteries#table-of-contents)
+
+## Links
+
+- Demo: [elm-batteries.netlify.com/demo](https://elm-batteries.netlify.com/demo)
+- Documentation: [Table of contents](https://github.com/cedricss/elm-batteries#table-of-contents)
+- Twitter: [@CedricSoulas](https://twitter.com/CedricSoulas)
+- Newsletter: [concat.dev/elm](https://concat.dev/elm#subscribe)
+- Chat: [Slack](https://elmlang.herokuapp.com/) (ping @CedricSoulas)
+
+## Examples
+
+<h3 align="center">
+  <i>The generated <a href="https://elm-lang.org">Elm</a> app. Started with <a href="https://parceljs.org">Parcel</a><br/> behind <a href="https://www.netlify.com/products/dev/">Netlify Dev</a> and tested with <a href="https://www.cypress.io">Cypress</a>:</i>
+</h3>
 
 <p align="center">
-  <i>The generated <a href="https://elm-lang.org">Elm</a> app started with <a href="https://parceljs.org">Parcel</a><br/> behind <a href="https://www.netlify.com/products/dev/">Netlify Dev</a> and tested with <a href="https://www.cypress.io">Cypress</a>:</i>
-</p>
-
-<p align="center" margin-bottom="-2rem">
   <a href="https://elm-batteries.netlify.com/demo">
     <img width="875px" src="https://concat.dev/elm-cypress.png" alt="elm-batteries template demo" />
   </a>
 </p>
 
-## Links
+---
 
-- Demo: [elm-batteries.netlify.com/demo](https://elm-batteries.netlify.com/demo)
-- Documentation: [concat.dev/elm](https://concat.dev/elm)
-- News and support:
-  - [Twitter](https://twitter.com/CedricSoulas)
-  - [Mailing list](https://concat.dev/elm#subscribe)
-  - [Slack](https://elmlang.herokuapp.com/) (ping @CedricSoulas)
+<h3 align="center">
+  <br/>
+  <i>Usage with <a href="https://www.npmjs.com/get-npm">npm</a> or <a href="https://yarnpkg.com">yarn</a></i>
+</h3>
 
-## Features
+<p align="center">
+  <a href="https://elm-batteries.netlify.com/demo">
+    <img width="875px" src="https://concat.dev/sneak_peek.png" alt="Website documentation (sneak peek)" />
+  </a>
+</p>
 
-- Elm app with css, navigation, routes, remote data and JSON decoder
-- Local web server and serverless functions
-- Hot code and style reloading, keeping app state
-- Front-end testing
-- Optimized and minified production build
-- Live, preview and production deployments
-
-![Website documentation (sneak peek)](https://concat.dev/sneak_peek.png)
 
 ## Table of contents
 
@@ -63,19 +75,31 @@ A project template and a generator to:
   - [Html meta tags](#meta-tags)
   - [Elm Navigation](#navigation)
 
-## Documentation
-
 ## Setup
 
 ### Generate a new project
 
-Click the Github green button [Use this template](https://github.com/cedricss/elm-batteries/generate) to generate a new public or private project from [elm-batteries](https://github.com/cedricss/elm-batteries).
+#### From the CLI
 
-Install the dependencies:
+<img width="438px" src="https://concat.dev/create-elm-batteries.png" alt="create-elm-batteries cli generator" />
 
 ```
-npm install
+npm init elm-batteries ./my-elm-app
 ```
+
+or
+
+```
+yarn create elm-batteries ./my-elm-app
+```
+
+#### From Github
+
+<img width="401px" src="https://concat.dev/use-this-template.png" alt="Use this Github Template" />
+
+Click [Use this template](https://github.com/cedricss/elm-batteries/generate) to generate a new public or private project from [elm-batteries](https://github.com/cedricss/elm-batteries). Install the dependencies with `npm install` or `yarn install`.
+
+---
 
 💡 In the following documentation, if you use [yarn](https://yarnpkg.com), run `yarn <command-name>` (instead of `npm run <command-name>`). Alternatively, you can define short aliases in your terminal to run these commands.
 
@@ -83,25 +107,26 @@ npm install
 
 ### Develop (Elm + Parcel)
 
-Read [Elm + Parcel](PARCEL.md) to use this project template without Netlify Dev and serverless functions.
+Read [Elm + Parcel](https://github.com/cedricss/elm-batteries/blob/master/PARCEL.md) to use this project template without Netlify Dev and serverless functions.
 
 ### Develop with serverless functions (Elm + Parcel + Netlify Dev)
 
-To run serverless functions along your Elm app, run:
+To run serverless functions along your Elm app, run
 
 ```bash
 npm run dev
+```
+
+or
+
+```bash
+yarn dev
 ```
 
 > ✓ development build with [Parcel](https://parceljs.org/)<br/>
 > ✓ web server with Parcel behind [Netlify Dev](https://www.netlify.com/docs/cli/#netlify-dev-beta)<br/>
 > ✓ serverless functions on your local machine<br/>
 > ✓ hot code swapping with [elm-hot](https://github.com/klazuka/elm-hot)<br/>
-
-- Web page: http://localhost:8888
-- Serverless function example:
-  - http://localhost:8888/.netlify/functions/version
-  - source: `functions/version/version.js`
 
 ### Run a live session
 
@@ -112,7 +137,7 @@ npm run dev:live
 ```
 
 > ✓ development build with [Parcel](https://parceljs.org/)<br/>
-> ✓ live session with [Netlify Dev](https://www.netlify.com/docs/welcome/)<br/>
+> ✓ live sharing with [Netlify Dev](https://www.netlify.com/docs/welcome/)<br/>
 
 ## Testing
 
@@ -134,7 +159,7 @@ Alternatively, to run Cypress tests from the CLI without the GUI:
 npm run cypress
 ```
 
-The Elm app uses `data-*` attributes to provide context to the selectors and insulate them from CSS or JS changes. [Learn more »](https://docs.cypress.io/guides/references/best-practices.html#Selecting-Elements)
+The Elm app uses `data-*` attributes to provide context to the selectors and insulate them from CSS or JS changes. [Learn more ›](https://docs.cypress.io/guides/references/best-practices.html#Selecting-Elements)
 
 To learn more about Cypress and play with it, [install and start it](https://docs.cypress.io/guides/getting-started/installing-cypress.html#Installing) in a fresh new project folder: it will initialize a `cypress` folder with several examples.
 
@@ -160,6 +185,12 @@ npm run test
 
 ```bash
 npm run deploy
+```
+
+or
+
+```bash
+yarn deploy
 ```
 
 > ✓ production build with [Parcel](https://parceljs.org/)<br/>
@@ -210,18 +241,18 @@ npm run deploy:prod
 - A [navigation `Key`](https://package.elm-lang.org/packages/elm/browser/latest/Browser-Navigation#Key) is needed to create navigation commands that change the URL: it is stored in the `Model`.
 - `Nav.pushUrl` changes the address bar without starting a page load.
 
-## Site and sources
+## Links and sources
 
-- Documentation: [concat.dev/elm/batteries](https://concat.dev/elm)
+- Demo: [elm-batteries.netlify.com/demo](https://elm-batteries.netlify.com/demo)
+- Documentation: [Table of contents](https://github.com/cedricss/elm-batteries#table-of-contents)
+- Twitter: [@CedricSoulas](https://twitter.com/CedricSoulas)
+- Newsletter: [concat.dev/elm](https://concat.dev/elm#subscribe)
+- Chat: [Slack](https://elmlang.herokuapp.com/) (ping @CedricSoulas)
 - Project template: [github.com/cedricss/elm-batteries](https://github.com/cedricss/elm-batteries)
-- News and support:
-  - [Twitter](https://twitter.com/CedricSoulas)
-  - [Mailing list](https://concat.dev/elm#subscribe)
-  - [Slack](https://elmlang.herokuapp.com/) (ping @CedricSoulas)
 - Built with elm-batteries:
   - [reactive.how/rxjs](https://reactive.how/rxjs)
   - [concat.dev](https://concat.dev)
 
 ## License
 
-Authored by [Cédric Soulas](https://twitter.com/CedricSoulas), released under the [MIT](LICENSE) License.
+Authored by [Cédric Soulas](https://twitter.com/CedricSoulas), released under the [MIT](LICENSE) License. Read [LICENSE](LICENSE).

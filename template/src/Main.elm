@@ -96,13 +96,6 @@ body model =
     ]
 
 
-viewContent : List (Html Msg) -> Html Msg
-viewContent content =
-    div
-        [ class "content text-center" ]
-        content
-
-
 viewHome : Model -> List (Html Msg)
 viewHome model =
     [ h1 [] [ text "Elm Batteries Included" ]
