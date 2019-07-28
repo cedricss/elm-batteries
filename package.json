@@ -1,6 +1,6 @@
 {
   "name": "elm-batteries",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Elm + parcel + tailwind + cypress + netlify and more!",
   "main": "index.js",
   "private": true,
@@ -14,7 +14,7 @@
     "netlify-cli": "^2.11.23",
     "node-elm-compiler": "^5.0.3",
     "parcel-bundler": "^1.12.3",
-    "sass": "^1.22.4",
+    "sass": "^1.22.7",
     "tailwindcss": "^1.0.5"
   },
   "scripts": {
