@@ -10,7 +10,7 @@ module.exports = {
     {
       name: "description",
       message: "Project description",
-      default: "My Elm project"
+      default: "My Elm app"
     },
     {
       name: "author",
@@ -28,13 +28,13 @@ module.exports = {
     },
     {
       name: "cypress",
-      message: "End-to-end testing with Cypress?",
+      message: "Testing with Cypress?",
       type: "confirm",
       defaut: true
     },
     {
       name: "netlify",
-      message: "Local dev platform and deployment with Netlify?",
+      message: "Dev platform and deployment with Netlify?",
       type: "confirm",
       defaut: true
     },
