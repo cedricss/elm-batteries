@@ -8,6 +8,30 @@ A project template and a generator to:
 - Learn how [Elm](https://elm-lang.org/), [Parcel](https://parceljs.org), [Cypress](https://www.cypress.io) and [Netlify](https://www.netlify.com) work together 😋
 - Get started with Elm css, navigation, routes, remote data and JSON decoder
 
+[**Examples ›**](#examples)
+
+## Quick Start
+
+```
+npm init elm-batteries ./my-elm-app
+```
+
+```
+cd my-elm-app && npm run dev
+```
+
+or
+
+```
+yarn create elm-batteries ./my-elm-app
+```
+
+```
+cd my-elm-app && yarn dev
+```
+
+or [generate from Github ›](#from-github)
+
 ## Features
 
 - Local web server and serverless functions
@@ -17,7 +41,7 @@ A project template and a generator to:
 - Optimized and minified production build
 - Preview and production deployments
 
-[**Learn more ›**](https://github.com/cedricss/elm-batteries#table-of-contents)
+[**Learn more ›**](#table-of-contents)
 
 ## Links
 
@@ -52,14 +76,12 @@ A project template and a generator to:
   </a>
 </p>
 
-
 ## Table of contents
 
 - Setup
   - [Generate a new project from this template](#generate-a-new-project)
 - Local development
-  - [Develop](#develop) (Elm + Parcel)
-  - [Develop with serverless functions](#develop-with-serverless-functions) (Elm + Parcel + Netlify Dev)
+  - [Develop](#develop)
   - [Run a live session](#run-a-live-session)
 - Testing
   - [Run Cypress](#run-cypress)
@@ -87,17 +109,29 @@ A project template and a generator to:
 npm init elm-batteries ./my-elm-app
 ```
 
+```
+cd my-elm-app
+npm run dev
+```
+
 or
 
 ```
 yarn create elm-batteries ./my-elm-app
 ```
 
+```
+cd my-elm-app
+yarn dev
+```
+
 #### From Github
 
 <img width="401px" src="https://concat.dev/use-this-template.png" alt="Use this Github Template" />
 
-Click [Use this template](https://github.com/cedricss/elm-batteries/generate) to generate a new public or private project from [elm-batteries](https://github.com/cedricss/elm-batteries). Install the dependencies with `npm install` or `yarn install`.
+Click [Use this template](https://github.com/cedricss/elm-batteries/generate) to generate a new public or private project from [elm-batteries](https://github.com/cedricss/elm-batteries).
+
+Install the dependencies with `npm install` or `yarn install` and run `npm run dev` or `yarn dev`.
 
 ---
 
@@ -105,11 +139,7 @@ Click [Use this template](https://github.com/cedricss/elm-batteries/generate) to
 
 ## Local development
 
-### Develop (Elm + Parcel)
-
-Read [Elm + Parcel](https://github.com/cedricss/elm-batteries/blob/master/PARCEL.md) to use this project template without Netlify Dev and serverless functions.
-
-### Develop with serverless functions (Elm + Parcel + Netlify Dev)
+### Develop
 
 To run serverless functions along your Elm app, run
 
@@ -123,10 +153,18 @@ or
 yarn dev
 ```
 
+Then open [localhost:8888](http://localhost:8888)
+
 > ✓ development build with [Parcel](https://parceljs.org/)<br/>
 > ✓ web server with Parcel behind [Netlify Dev](https://www.netlify.com/docs/cli/#netlify-dev-beta)<br/>
 > ✓ serverless functions on your local machine<br/>
 > ✓ hot code swapping with [elm-hot](https://github.com/klazuka/elm-hot)<br/>
+
+⚠️ Netlify Dev connects to the `1234` default Parcel port. Make sure this port isn't used by another application.
+
+### Develop without Netlify Dev
+
+Read [Elm + Parcel](https://github.com/cedricss/elm-batteries/blob/master/PARCEL.md) to use this project template without Netlify Dev and serverless functions.
 
 ### Run a live session
 
