@@ -63,6 +63,13 @@ or [generate from Github ›](#from-github)
   </a>
 </p>
 
+<p align="center">
+  Test file source:
+  <a href="https://github.com/cedricss/elm-batteries/blob/master/cypress/integration/demo.spec.js">
+    demo.spec.js
+  </a>
+</p>
+
 ---
 
 <h3 align="center">
@@ -187,7 +194,7 @@ These tests are in `cypress/integration/*`. [Start your Elm app](#1-develop-with
 npm run cypress:open
 ```
 
-If you open one test from the list of spec files then you should see your application loaded:
+If you open one test from the list of spec files (for example [demo.spec.js](https://github.com/cedricss/elm-batteries/blob/master/cypress/integration/demo.spec.js)) then you should see your application loaded:
 
 ![Cypress runner app](https://concat.dev/elm-cypress.png)
 
