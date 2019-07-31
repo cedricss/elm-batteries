@@ -162,6 +162,8 @@ yarn dev
 
 Then open [localhost:8888](http://localhost:8888)
 
+![Netlify Dev on top of Parcel and serverless functions](https://concat.dev/netlify-dev.png)
+
 > ✓ development build with [Parcel](https://parceljs.org/)<br/>
 > ✓ web server with Parcel behind [Netlify Dev](https://www.netlify.com/docs/cli/#netlify-dev-beta)<br/>
 > ✓ serverless functions on your local machine<br/>
