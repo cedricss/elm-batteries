@@ -8,8 +8,6 @@ A project template and a generator to:
 - Learn how [Elm](https://elm-lang.org/), [Parcel](https://parceljs.org), [Cypress](https://www.cypress.io) and [Netlify](https://www.netlify.com) work together 😋
 - Get started with Elm css, navigation, routes, remote data and JSON decoder
 
-[**Quick Start ›**](#quick-start)
-
 ## Features
 
 - Local web server and optional serverless functions
@@ -19,19 +17,15 @@ A project template and a generator to:
 - Optimized and minified production build
 - Preview and production deployments
 
-[**Learn more ›**](#table-of-contents)
+[**Table of contents ›**](#table-of-contents)
 
-## Links
+## Quick Start
 
-- Demo: [elm-batteries.netlify.com/demo](https://elm-batteries.netlify.com/demo)
-- Quick Start: [from the CLI](#from-the-CLI) or [from the repository template](#from-the-repository-template)
-- Documentation: [Table of contents](https://github.com/cedricss/elm-batteries#table-of-contents)
-- Twitter: [@CedricSoulas](https://twitter.com/CedricSoulas)
-- Newsletter: [concat.dev/elm](https://concat.dev/elm#subscribe)
-- Chat: [Slack](https://elmlang.herokuapp.com/) (ping @CedricSoulas)
-- Forum: [Discourse thread](https://discourse.elm-lang.org/t/elm-batteries-elm-parcel-cypress-netlify-project-template/4077)
+- `npm init elm-batteries ./my-elm-app`
+- or `yarn create elm-batteries ./my-elm-app`
+- or [generate from Github](https://github.com/cedricss/elm-batteries/generate)
 
-## Examples
+[**Learn more ›**](#setup)
 
 <h3 align="center">
   <i>The generated <a href="https://elm-lang.org">Elm</a> app. Started with <a href="https://parceljs.org">Parcel</a><br/> behind <a href="https://www.netlify.com/products/dev/">Netlify Dev</a> and tested with <a href="https://www.cypress.io">Cypress</a>:</i>
@@ -50,11 +44,18 @@ A project template and a generator to:
   </a>
 </p>
 
----
+## Links
+
+- Demo: [elm-batteries.netlify.com/demo](https://elm-batteries.netlify.com/demo)
+- Twitter: [@CedricSoulas](https://twitter.com/CedricSoulas)
+- Newsletter: [concat.dev/elm](https://concat.dev/elm#subscribe)
+- Chat: [Slack](https://elmlang.herokuapp.com/) (ping @CedricSoulas)
+- Forum: [Discourse thread](https://discourse.elm-lang.org/t/elm-batteries-elm-parcel-cypress-netlify-project-template/4077)
+
+## Overview
 
 <h3 align="center">
-  <br/>
-  <i>Usage with <a href="https://www.npmjs.com/get-npm">npm</a> or <a href="https://yarnpkg.com">yarn</a></i>
+  Usage with <a href="https://www.npmjs.com/get-npm">npm</a> or <a href="https://yarnpkg.com">yarn</a>
 </h3>
 
 <p align="center">
@@ -65,7 +66,7 @@ A project template and a generator to:
 
 ## Table of contents
 
-- Quick Start
+- Setup
   - [From the CLI](#from-the-CLI)
   - [From the repository template](#from-the-repository-template)
 - Local development
@@ -85,7 +86,7 @@ A project template and a generator to:
   - [Html meta tags](#meta-tags)
   - [Elm Navigation](#navigation)
 
-## Quick Start
+## Setup
 
 ### From the CLI
 
@@ -276,6 +277,7 @@ npm run deploy:prod
 - Twitter: [@CedricSoulas](https://twitter.com/CedricSoulas)
 - Newsletter: [concat.dev/elm](https://concat.dev/elm#subscribe)
 - Chat: [Slack](https://elmlang.herokuapp.com/) (ping @CedricSoulas)
+- Forum: [Discourse thread](https://discourse.elm-lang.org/t/elm-batteries-elm-parcel-cypress-netlify-project-template/4077)
 - Project template: [github.com/cedricss/elm-batteries](https://github.com/cedricss/elm-batteries)
 - Built with elm-batteries:
   - [reactive.how/rxjs](https://reactive.how/rxjs)
