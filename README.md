@@ -8,35 +8,13 @@ A project template and a generator to:
 - Learn how [Elm](https://elm-lang.org/), [Parcel](https://parceljs.org), [Cypress](https://www.cypress.io) and [Netlify](https://www.netlify.com) work together 😋
 - Get started with Elm css, navigation, routes, remote data and JSON decoder
 
-[**Examples ›**](#examples)
-
-## Quick Start
-
-```
-npm init elm-batteries ./my-elm-app
-```
-
-```
-cd my-elm-app && npm run dev
-```
-
-or
-
-```
-yarn create elm-batteries ./my-elm-app
-```
-
-```
-cd my-elm-app && yarn dev
-```
-
-or [generate from Github ›](#from-github)
+[**Quick Start ›**](#quick-start)
 
 ## Features
 
-- Local web server and serverless functions
+- Local web server and optional serverless functions
 - Hot code and style reloading, keeping app state
-- CSS transformations with postcss (autoprefixer, purgecss...)
+- CSS transformations with postcss (`autoprefixer`, `purgecss`...)
 - Front-end testing
 - Optimized and minified production build
 - Preview and production deployments
@@ -46,10 +24,12 @@ or [generate from Github ›](#from-github)
 ## Links
 
 - Demo: [elm-batteries.netlify.com/demo](https://elm-batteries.netlify.com/demo)
+- Quick Start: [from the CLI](#from-the-CLI) or [from the repository template](#from-the-repository-template)
 - Documentation: [Table of contents](https://github.com/cedricss/elm-batteries#table-of-contents)
 - Twitter: [@CedricSoulas](https://twitter.com/CedricSoulas)
 - Newsletter: [concat.dev/elm](https://concat.dev/elm#subscribe)
 - Chat: [Slack](https://elmlang.herokuapp.com/) (ping @CedricSoulas)
+- Forum: [Discourse thread](https://discourse.elm-lang.org/t/elm-batteries-elm-parcel-cypress-netlify-project-template/4077)
 
 ## Examples
 
@@ -85,8 +65,9 @@ or [generate from Github ›](#from-github)
 
 ## Table of contents
 
-- Setup
-  - [Generate a new project from this template](#generate-a-new-project)
+- Quick Start
+  - [From the CLI](#from-the-CLI)
+  - [From the repository template](#from-the-repository-template)
 - Local development
   - [Develop](#develop)
   - [Run a live session](#run-a-live-session)
@@ -104,35 +85,35 @@ or [generate from Github ›](#from-github)
   - [Html meta tags](#meta-tags)
   - [Elm Navigation](#navigation)
 
-## Setup
+## Quick Start
 
-### Generate a new project
+### From the CLI
 
-#### From the CLI
+The CLI lets you pick the batteries to include in your app:
 
 <img width="438px" src="https://concat.dev/create-elm-batteries.png" alt="create-elm-batteries cli generator" />
+
+#### `npm`
 
 ```
 npm init elm-batteries ./my-elm-app
 ```
 
 ```
-cd my-elm-app
-npm run dev
+cd my-elm-app && npm run dev
 ```
 
-or
+#### or `yarn`
 
 ```
 yarn create elm-batteries ./my-elm-app
 ```
 
 ```
-cd my-elm-app
-yarn dev
+cd my-elm-app && yarn dev
 ```
 
-#### From Github
+### From the repository template
 
 <img width="401px" src="https://concat.dev/use-this-template.png" alt="Use this Github Template" />
 
