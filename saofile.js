@@ -100,19 +100,6 @@ module.exports = {
 
     script("dev");
 
-    title("Testing");
-
-    script("test:watch");
-
-    if (this.answers.cypress) {
-      script("cypress:open");
-    }
-
-    title("Production build and deployment");
-
-    script("deploy");
-    script("deploy:prod");
-
     title("Learn more and stay tuned");
     console.log(chalk`\t{blue ⇢} https://concat.dev/elm\n`);
   }

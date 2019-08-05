@@ -8,50 +8,24 @@ A project template and a generator to:
 - Learn how [Elm](https://elm-lang.org/), [Parcel](https://parceljs.org), [Cypress](https://www.cypress.io) and [Netlify](https://www.netlify.com) work together 😋
 - Get started with Elm css, navigation, routes, remote data and JSON decoder
 
-[**Examples ›**](#examples)
-
-## Quick Start
-
-```
-npm init elm-batteries ./my-elm-app
-```
-
-```
-cd my-elm-app && npm run dev
-```
-
-or
-
-```
-  yarn create elm-batteries ./my-elm-app
-```
-
-```
-cd my-elm-app && yarn dev
-```
-
-or [generate from Github ›](#from-github)
-
 ## Features
 
-- Local web server and serverless functions
+- Local web server and optional serverless functions
 - Hot code and style reloading, keeping app state
-- CSS transformations with postcss (autoprefixer, purgecss...)
+- CSS transformations with postcss (`autoprefixer`, `purgecss`...)
 - Front-end testing
 - Optimized and minified production build
 - Preview and production deployments
 
-[**Learn more ›**](#table-of-contents)
+[**Table of contents ›**](#table-of-contents)
 
-## Links
+## Quick Start
 
-- Demo: [elm-batteries.netlify.com/demo](https://elm-batteries.netlify.com/demo)
-- Documentation: [Table of contents](https://github.com/cedricss/elm-batteries#table-of-contents)
-- Twitter: [@CedricSoulas](https://twitter.com/CedricSoulas)
-- Newsletter: [concat.dev/elm](https://concat.dev/elm#subscribe)
-- Chat: [Slack](https://elmlang.herokuapp.com/) (ping @CedricSoulas)
+- `npm init elm-batteries ./my-elm-app`
+- or `yarn create elm-batteries ./my-elm-app`
+- or [generate from Github](https://github.com/cedricss/elm-batteries/generate)
 
-## Examples
+[**Learn more ›**](#setup)
 
 <h3 align="center">
   <i>The generated <a href="https://elm-lang.org">Elm</a> app. Started with <a href="https://parceljs.org">Parcel</a><br/> behind <a href="https://www.netlify.com/products/dev/">Netlify Dev</a> and tested with <a href="https://www.cypress.io">Cypress</a>:</i>
@@ -63,11 +37,25 @@ or [generate from Github ›](#from-github)
   </a>
 </p>
 
----
+<p align="center">
+  Test file source:
+  <a href="https://github.com/cedricss/elm-batteries/blob/master/cypress/integration/demo.spec.js">
+    demo.spec.js
+  </a>
+</p>
+
+## Links
+
+- Demo: [elm-batteries.netlify.com/demo](https://elm-batteries.netlify.com/demo)
+- Twitter: [@CedricSoulas](https://twitter.com/CedricSoulas)
+- Newsletter: [concat.dev/elm](https://concat.dev/elm#subscribe)
+- Chat: [Slack](https://elmlang.herokuapp.com/) (ping @CedricSoulas)
+- Forum: [Discourse thread](https://discourse.elm-lang.org/t/elm-batteries-elm-parcel-cypress-netlify-project-template/4077)
+
+## Overview
 
 <h3 align="center">
-  <br/>
-  <i>Usage with <a href="https://www.npmjs.com/get-npm">npm</a> or <a href="https://yarnpkg.com">yarn</a></i>
+  Usage with <a href="https://www.npmjs.com/get-npm">npm</a> or <a href="https://yarnpkg.com">yarn</a>
 </h3>
 
 <p align="center">
@@ -79,7 +67,8 @@ or [generate from Github ›](#from-github)
 ## Table of contents
 
 - Setup
-  - [Generate a new project from this template](#generate-a-new-project)
+  - [From the CLI](#from-the-CLI)
+  - [From the repository template](#from-the-repository-template)
 - Local development
   - [Develop](#develop)
   - [Run a live session](#run-a-live-session)
@@ -99,37 +88,39 @@ or [generate from Github ›](#from-github)
 
 ## Setup
 
-### Generate a new project
+### From the CLI
 
-#### From the CLI
+The CLI lets you pick the batteries to include in your app:
 
 <img width="438px" src="https://concat.dev/create-elm-batteries.png" alt="create-elm-batteries cli generator" />
+
+#### `npm`
 
 ```
 npm init elm-batteries ./my-elm-app
 ```
 
 ```
-cd my-elm-app
-npm run dev
+cd my-elm-app && npm run dev
 ```
 
-or
+#### or `yarn`
 
 ```
 yarn create elm-batteries ./my-elm-app
 ```
 
 ```
-cd my-elm-app
-yarn dev
+cd my-elm-app && yarn dev
 ```
 
-#### From Github
+### From the repository template
 
 <img width="401px" src="https://concat.dev/use-this-template.png" alt="Use this Github Template" />
 
-Click [Use this template](https://github.com/cedricss/elm-batteries/generate) to generate a new public or private project from [elm-batteries](https://github.com/cedricss/elm-batteries). Install the dependencies with `npm install` or `yarn install` and run `npm run dev` or `yarn dev`.
+Click [Use this template](https://github.com/cedricss/elm-batteries/generate) to generate a new public or private project from [elm-batteries](https://github.com/cedricss/elm-batteries).
+
+Install the dependencies with `npm install` or `yarn install` and run `npm run dev` or `yarn dev`.
 
 ---
 
@@ -151,10 +142,16 @@ or
 yarn dev
 ```
 
+Then open [localhost:8888](http://localhost:8888)
+
+![Netlify Dev on top of Parcel and serverless functions](https://concat.dev/netlify-dev.png)
+
 > ✓ development build with [Parcel](https://parceljs.org/)<br/>
 > ✓ web server with Parcel behind [Netlify Dev](https://www.netlify.com/docs/cli/#netlify-dev-beta)<br/>
 > ✓ serverless functions on your local machine<br/>
 > ✓ hot code swapping with [elm-hot](https://github.com/klazuka/elm-hot)<br/>
+
+⚠️ Netlify Dev connects to the `1234` default Parcel port. Make sure this port isn't used by another application.
 
 ### Develop without Netlify Dev
 
@@ -181,7 +178,7 @@ These tests are in `cypress/integration/*`. [Start your Elm app](#1-develop-with
 npm run cypress:open
 ```
 
-If you open one test from the list of spec files then you should see your application loaded:
+If you open one test from the list of spec files (for example [demo.spec.js](https://github.com/cedricss/elm-batteries/blob/master/cypress/integration/demo.spec.js)) then you should see your application loaded:
 
 ![Cypress runner app](https://concat.dev/elm-cypress.png)
 
@@ -280,6 +277,7 @@ npm run deploy:prod
 - Twitter: [@CedricSoulas](https://twitter.com/CedricSoulas)
 - Newsletter: [concat.dev/elm](https://concat.dev/elm#subscribe)
 - Chat: [Slack](https://elmlang.herokuapp.com/) (ping @CedricSoulas)
+- Forum: [Discourse thread](https://discourse.elm-lang.org/t/elm-batteries-elm-parcel-cypress-netlify-project-template/4077)
 - Project template: [github.com/cedricss/elm-batteries](https://github.com/cedricss/elm-batteries)
 - Built with elm-batteries:
   - [reactive.how/rxjs](https://reactive.how/rxjs)
