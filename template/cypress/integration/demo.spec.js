@@ -1,7 +1,7 @@
 context("Demo", () => {
   /**
-    All tests are intentionally in the same file
-    You can dispatch the following contexts in multiple *.spec.js files
+    For demo purpose, all tests are in the same file. Feel free to dispatch
+    the following contexts in multiple *.spec.js files.
    */
   context("Visit the homepage", () => {
     beforeEach(() => {
@@ -95,7 +95,7 @@ context("Demo", () => {
     });
 
     /**
-      The request in the following test is not stubbe d: it guarantees that the
+      The request in the following test is not stubbed: it guarantees that the
       contract between your Elm app and Netlify is working correctly.
       https://docs.cypress.io/guides/guides/network-requests.html#Testing-Strategies
     */

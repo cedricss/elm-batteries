@@ -2,14 +2,11 @@ module Main exposing (main)
 
 import Browser
 import Browser.Navigation as Nav
-import Css exposing (..)
 import Data
-import Html
 import Html.Styled exposing (..)
-import Html.Styled.Attributes exposing (alt, attribute, class, css, disabled, href, src)
+import Html.Styled.Attributes exposing (attribute, class, disabled, href)
 import Html.Styled.Events exposing (onClick)
 import Http
-import Markdown
 import RemoteData exposing (RemoteData)
 import Route exposing (Route(..))
 import Url exposing (Url)
@@ -196,10 +193,6 @@ viewDemo model =
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
-    let
-        noChange =
-            ( model, Cmd.none )
-    in
     case msg of
         BrowserChangedUrl url ->
             ( { model | route = Route.fromUrl url }

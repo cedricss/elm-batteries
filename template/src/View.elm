@@ -8,9 +8,8 @@ module View exposing
     )
 
 import Css exposing (..)
-import Html
 import Html.Styled exposing (..)
-import Html.Styled.Attributes exposing (alt, attribute, class, css, href, src, target)
+import Html.Styled.Attributes exposing (attribute, class, css, href, target)
 
 
 theme : { headerHeight : Rem }
@@ -25,8 +24,8 @@ theme =
 header : List (Html msg) -> Html msg
 header items =
     div
-        [ class "fixed top-0 inset-x-0 bg-white border-b border-gray-300"
-        , css [ height theme.headerHeight ]
+        [ class "fixed top-0 inset-x-0 bg-white border-b border-gray-300" -- Tailwind utilities: https://tailwindcss.com
+        , css [ height theme.headerHeight ] -- elm-css: https://package.elm-lang.org/packages/rtfeldman/elm-css/latest
         ]
         [ div
             [ class "container mx-auto h-full"
