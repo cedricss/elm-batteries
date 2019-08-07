@@ -4,8 +4,7 @@ module Route exposing
     )
 
 import Url
-import Url.Parser as Parser exposing ((</>), Parser, int, map, oneOf, s, string, top)
-import Url.Parser.Query as Query
+import Url.Parser as Parser exposing ((</>), Parser, map, oneOf, s, top)
 
 
 type Route
