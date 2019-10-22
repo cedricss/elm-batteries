@@ -7,14 +7,14 @@ module View exposing
     , notFound
     )
 
-import Css exposing (..)
+import Css
 import Html.Styled exposing (..)
 import Html.Styled.Attributes exposing (attribute, class, css, href, target)
 
 
-theme : { headerHeight : Rem }
+theme : { headerHeight : Css.Rem }
 theme =
-    { headerHeight = rem 4 }
+    { headerHeight = Css.rem 4 }
 
 
 
@@ -25,7 +25,7 @@ header : List (Html msg) -> Html msg
 header items =
     div
         [ class "fixed top-0 inset-x-0 bg-white border-b border-gray-300" -- Tailwind utilities: https://tailwindcss.com
-        , css [ height theme.headerHeight ] -- elm-css: https://package.elm-lang.org/packages/rtfeldman/elm-css/latest
+        , css [ Css.height theme.headerHeight ] -- elm-css: https://package.elm-lang.org/packages/rtfeldman/elm-css/latest
         ]
         [ div
             [ class "container mx-auto h-full"
@@ -77,7 +77,7 @@ container content =
     div
         [ attribute "data-test" "content"
         , class "container mx-auto py-10 px-4"
-        , css [ marginTop theme.headerHeight ]
+        , css [ Css.marginTop theme.headerHeight ]
         ]
         content
 
