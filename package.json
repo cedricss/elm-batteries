@@ -11,14 +11,14 @@
     "cypress": "^3.4.0",
     "elm": "^0.19.1-2",
     "elm-hot": "^1.0.1",
-    "netlify-cli": "^2.11.23",
+    "netlify-cli": "^2.19.0",
     "node-elm-compiler": "^5.0.3",
     "parcel-bundler": "^1.12.3",
     "sass": "^1.22.7",
     "tailwindcss": "^1.0.5"
   },
   "scripts": {
-    "dev": "netlify dev",
+    "dev": "netlify dev -p 8888",
     "dev:live": "netlify dev --live",
     "deploy": "npm run build && netlify deploy",
     "deploy:prod": "netlify deploy --prod",
