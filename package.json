@@ -1,6 +1,6 @@
 {
   "name": "elm-batteries",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Elm + parcel + tailwind + cypress + netlify and more!",
   "main": "index.js",
   "private": true,
