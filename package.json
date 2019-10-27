@@ -9,8 +9,8 @@
     "template/"
   ],
   "repository": {
-    "url": "git+https://github.com/cedricss/create-elm-dev.git",
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/cedricss/elm-batteries.git"
   },
   "scripts": {
     "release": "standard-version"
@@ -27,10 +27,6 @@
     "name": "Cédric Soulas",
     "email": "soulascedric@gmail.com",
     "url": "https://concat.dev/elm"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cedricss/elm-batteries.git"
   },
   "license": "MIT",
   "keywords": [
