@@ -1,7 +1,10 @@
 module.exports = {
+  purge: {
+    content: ["./src/**/*.elm", "index.js"],
+  },
   theme: {
-    extend: {}
+    extend: {},
   },
   variants: {},
-  plugins: []
+  plugins: [],
 };
