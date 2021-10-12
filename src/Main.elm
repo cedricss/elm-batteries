@@ -1,4 +1,4 @@
-module Main exposing (main)
+port module Main exposing (main)
 
 import Browser
 import Browser.Navigation as Nav
@@ -7,6 +7,8 @@ import Html.Styled exposing (..)
 import Html.Styled.Attributes exposing (attribute, class, disabled, href)
 import Html.Styled.Events exposing (onClick)
 import Http
+import Json.Decode
+import Json.Encode
 import RemoteData exposing (RemoteData)
 import Route exposing (Route(..))
 import Url exposing (Url)
@@ -34,6 +36,7 @@ type Msg
     | UserClickedLink Browser.UrlRequest
     | UserClickedPackageButton
     | ServerRespondedWithPackage (Result Http.Error Data.Package)
+    | DatabaseRespondedWithPieces Json.Encode.Value
 
 
 main : Program Flags Model Msg
@@ -222,6 +225,13 @@ update msg model =
                 }
             )
 
+        DatabaseRespondedWithPieces pieces ->
+            let
+                _ =
+                    Debug.log "pieces" (Json.Decode.decodeValue Data.piecesDecoder pieces)
+            in
+            ( model, Cmd.none )
+
         ServerRespondedWithPackage result ->
             ( { model | package = RemoteData.fromResult result }
             , Cmd.none
@@ -244,4 +254,7 @@ init flags url key =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    Sub.none
+    newBoardPieces DatabaseRespondedWithPieces
+
+
+port newBoardPieces : (Json.Encode.Value -> msg) -> Sub msg

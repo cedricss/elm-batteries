@@ -33,6 +33,9 @@
     "type": "git",
     "url": "git+https://github.com/cedricss/elm-batteries.git"
   },
+  "browserslist": [
+    "since 2018-06"
+  ],
   "keywords": [
     "elm",
     "parcel",
@@ -50,5 +53,8 @@
   "bugs": {
     "url": "https://github.com/cedricss/elm-batteries/issues"
   },
-  "homepage": "https://github.com/cedricss/elm-batteries#readme"
+  "homepage": "https://github.com/cedricss/elm-batteries#readme",
+  "dependencies": {
+    "@supabase/supabase-js": "^1.24.0"
+  }
 }
