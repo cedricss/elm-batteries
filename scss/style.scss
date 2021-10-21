@@ -9,12 +9,12 @@ body {
 }
 
 h1 {
-  @apply font-bold text-4xl text-gray-800;
+  @apply font-bold text-5xl text-gray-900;
   @apply mb-4;
 }
 
 h2 {
-  @apply font-semibold text-3xl text-gray-900;
+  @apply font-bold text-3xl text-gray-800 mb-6;
 }
 
 h1 + h2 {

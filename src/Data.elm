@@ -1,7 +1,8 @@
-module Data exposing (Package, Piece, packageDecoder, piecesDecoder)
+module Data exposing (Package, Piece, Side(..), encodePiece, flip, packageDecoder, pieceDecoder)
 
 import Json.Decode as Decode exposing (Decoder, int, string)
 import Json.Decode.Pipeline exposing (required)
+import Json.Encode as Encode
 
 
 type alias Package =
@@ -12,10 +13,25 @@ type alias Package =
     }
 
 
+type Side
+    = Front
+    | Back
+
+
 type alias Piece =
-    { x : Int
-    , y : Int
+    { position : Int
+    , side : Side
     }
+
+
+flip : Piece -> Piece
+flip piece =
+    case piece.side of
+        Back ->
+            { piece | side = Front }
+
+        Front ->
+            { piece | side = Back }
 
 
 
@@ -37,10 +53,30 @@ packageDecoder =
 pieceDecoder : Decoder Piece
 pieceDecoder =
     Decode.succeed Piece
-        |> required "x" int
-        |> required "y" int
+        |> required "position" int
+        |> required "side" (Decode.map stringToSide string)
 
 
-piecesDecoder : Decoder (List Piece)
-piecesDecoder =
-    Decode.list pieceDecoder
+stringToSide side =
+    if side == "BACK" then
+        Back
+
+    else
+        Front
+
+
+sideToString side =
+    case side of
+        Back ->
+            "BACK"
+
+        Front ->
+            "FRONT"
+
+
+encodePiece : Piece -> Encode.Value
+encodePiece piece =
+    Encode.object
+        [ ( "position", Encode.int piece.position )
+        , ( "side", Encode.string (sideToString piece.side) )
+        ]

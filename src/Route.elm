@@ -9,6 +9,7 @@ import Url.Parser as Parser exposing ((</>), Parser, map, oneOf, s, top)
 
 type Route
     = ApiDemo
+    | DatabaseDemo
     | Home
     | NotFound
 
@@ -18,7 +19,8 @@ parser =
     oneOf
         [ map Home top
         , map Home (s "index.html")
-        , map ApiDemo (s "demo")
+        , map ApiDemo (s "demo") </> s "api"
+        , map DatabaseDemo (s "demo") </> s "database"
 
         --  Add more routes like this:
         --  , map Comment (s "user" </> string </> s "comment" </> int)

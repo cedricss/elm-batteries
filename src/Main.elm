@@ -9,10 +9,12 @@ import Html.Styled.Events exposing (onClick)
 import Http
 import Json.Decode
 import Json.Encode
+import List.Extra
 import RemoteData exposing (RemoteData)
 import Route exposing (Route(..))
 import Url exposing (Url)
 import View exposing (navIn, navOut)
+import View.Board
 
 
 type alias Flags =
@@ -26,6 +28,7 @@ type alias Flags =
 type alias Model =
     { key : Nav.Key
     , route : Route.Route
+    , board : List Data.Piece
     , package : RemoteData Http.Error Data.Package
     }
 
@@ -35,8 +38,9 @@ type Msg
       BrowserChangedUrl Url
     | UserClickedLink Browser.UrlRequest
     | UserClickedPackageButton
+    | UserClickedPiece Data.Piece
     | ServerRespondedWithPackage (Result Http.Error Data.Package)
-    | DatabaseRespondedWithPieces Json.Encode.Value
+    | DatabaseRespondedWithPiece Json.Encode.Value
 
 
 main : Program Flags Model Msg
@@ -78,7 +82,8 @@ body : Model -> List (Html Msg)
 body model =
     [ View.header
         [ navIn "Home" "/"
-        , navIn "Demo" "/demo"
+        , navIn "API Demo" "/demo/api"
+        , navIn "Database Demo" "/demo/database"
         , navOut "Documentation" "https://concat.dev/elm"
         , navOut "Twitter" "https://twitter.com/CedricSoulas"
         , navOut "Github" "https://github.com/cedricss/elm-batteries"
@@ -86,7 +91,10 @@ body model =
     , View.container <|
         case model.route of
             ApiDemo ->
-                viewDemo model
+                viewApiDemo model
+
+            DatabaseDemo ->
+                viewDatabaseDemo model
 
             Home ->
                 viewHome model
@@ -110,8 +118,8 @@ viewHome model =
     ]
 
 
-viewDemo : Model -> List (Html Msg)
-viewDemo model =
+viewApiDemo : Model -> List (Html Msg)
+viewApiDemo model =
     let
         content attributes =
             ul <|
@@ -133,7 +141,7 @@ viewDemo model =
                 ]
                 [ text "Fetch package.json" ]
     in
-    [ h1 [] [ text "Demo" ]
+    [ h1 [] [ text "API Demo" ]
     , h2 [] [ text "Serverless Lambda function on Netlify" ]
     , p
         [ class "max-w-xl text-xl mb-8" ]
@@ -190,8 +198,23 @@ viewDemo model =
     ]
 
 
+viewDatabaseDemo : Model -> List (Html Msg)
+viewDatabaseDemo model =
+    [ h1 [] [ text "Database Demo" ]
+    , h2 [] [ text "Persistent data and real-time with Supabase" ]
+    , View.Board.view UserClickedPiece model.board
+    ]
+
+
 
 -- UPDATE
+
+
+setPiece piece model =
+    { model
+        | board =
+            List.Extra.setAt piece.position piece model.board
+    }
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -225,12 +248,20 @@ update msg model =
                 }
             )
 
-        DatabaseRespondedWithPieces pieces ->
+        UserClickedPiece piece ->
             let
-                _ =
-                    Debug.log "pieces" (Json.Decode.decodeValue Data.piecesDecoder pieces)
+                flippedPiece =
+                    Data.flip piece
             in
-            ( model, Cmd.none )
+            ( setPiece flippedPiece model, insertPiece (Data.encodePiece flippedPiece) )
+
+        DatabaseRespondedWithPiece value ->
+            case Json.Decode.decodeValue Data.pieceDecoder value of
+                Ok piece ->
+                    ( setPiece piece model, Cmd.none )
+
+                Err _ ->
+                    ( model, Cmd.none )
 
         ServerRespondedWithPackage result ->
             ( { model | package = RemoteData.fromResult result }
@@ -243,9 +274,13 @@ init flags url key =
     let
         route =
             Route.fromUrl url
+
+        makePiece n =
+            { position = n, side = Data.Front }
     in
     ( { key = key
       , route = route
+      , board = List.range 0 (8 * 8) |> List.map makePiece
       , package = RemoteData.NotAsked
       }
     , Cmd.none
@@ -254,7 +289,10 @@ init flags url key =
 
 subscriptions : Model -> Sub Msg
 subscriptions model =
-    newBoardPieces DatabaseRespondedWithPieces
+    newBoardPiece DatabaseRespondedWithPiece
 
 
-port newBoardPieces : (Json.Encode.Value -> msg) -> Sub msg
+port newBoardPiece : (Json.Encode.Value -> msg) -> Sub msg
+
+
+port insertPiece : Json.Encode.Value -> Cmd msg
